@@ -2,12 +2,17 @@ extends ../layout/main.pug
 
 include ../blocks/headerBlock/_headerBlock.pug
 include ../blocks/sForm/_sForm.pug
-include ../blocks/sContent/_sContent.pug
+include ../blocks/sAdvantages/_sAdvantages.pug
  
 include ../blocks/sContact/_sContact.pug
-include ../blocks/sForm/_sForm.pug
-include ../blocks/sForm/_sForm.pug
-include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sCandidates/_sCandidates.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sDirections/_sDirections.pug
+include ../blocks/sPromo/_sPromo.pug
+include ../blocks/sProductSlider/_sProductSlider.pug
+include ../blocks/sRecruitment/_sRecruitment.pug
+include ../blocks/sQuestions/_sQuestions.pug
+
 
 block variables
 	- let  mainPage= 'main-page' 
@@ -22,9 +27,13 @@ block pagecontent
 	
 	+parts('header')
 	main
-		+headerBlock 
-		+sCatalog
-		+sForm()
-		+sContact()
-		
+		+headerBlock
+		+sAdvantages
+		+sCandidates
+		+sAbout
+		+sDirections
+		+sPromo
+		+sProductSlider
+		+sRecruitment
+		+sQuestions
 	+parts('footer')
