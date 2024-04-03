@@ -1,0 +1,42 @@
+extends ../layout/main.pug
+
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+ 
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sCatalog/_sCatalog.pug
+
+block variables
+	- let  mainPage= 'main-page' 
+	- let  bg= null
+
+block title
+	- let  title= 'Modals page '
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	
+	
+	+parts('header')
+	main
+		+page-head(title,title, title, title , title,title, title, title, title,title, title, title)
+		.section.container 
+			mixin btn(a, t)
+				a( href= a).btn.btn-primary.link-modal-js= t
+			+btn("#modal-call", 'call')
+		.section.container
+			.col-8
+				+form-wrap
+					+input("input")
+					+input("select",'select')
+					+input("select",'select')(multiple)
+					button.btn.btn-primary(type="submit") submit
+		+sCatalog
+	+parts('footer')
+      
+
+
+

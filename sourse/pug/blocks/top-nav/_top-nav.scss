@@ -1,0 +1,37 @@
+.top-nav {
+	// --sPT: #{rem()};
+	// --sPB: #{rem()};
+	// --sTPB: #{rem()};
+	&__row{
+		// --bs-gutter-x: #{rem()};
+		// @include media-breakpoint-up(md) {
+			--bs-gutter-y: var(--bs-gutter-x);
+		// }
+
+	}
+	.section-title{
+		
+	}
+	&__col{
+
+	}
+	&__item{
+
+	}
+	&__slide{
+		height: auto;
+	}
+
+
+	@include media-breakpoint-up(sm) {}
+	
+	@include media-breakpoint-up(xs) {}
+	// 
+	@include media-breakpoint-between(md, xl) {}
+	// 
+	@include media-breakpoint-only(xs) {}
+
+	@include media-breakpoint-down(xs) {}
+}
+
+
