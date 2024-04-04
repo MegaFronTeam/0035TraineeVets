@@ -3,7 +3,29 @@ mixin sProductSlider(data)
 	+b.SECTION.sProductSlider.section#sProductSlider&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 sProductSlider
-				
-			+e.row.row
+				h2 Что тебя ждет
+			+e.slider--js.swiper
+				.swiper-wrapper
+					+e.slide.swiper-slide
+						+b.product-card
+							+e.descr #[span 6 месяцев ] оплачиваемой стажировки
+							+e.img-wrap.bg-wrap.d-lg-none
+								+img(`img/card-1.png`, 'bg')
+							+e.img-wrap.bg-wrap.d-none.d-lg-block
+								+img(`img/card-1-lg.png`, 'bg')
+					+e.slide.swiper-slide
+						+b.product-card
+							+e.descr #[span Возможность попасть в штат: ]  60% выпускников стажировки получают предложение о работе
+							+e.img-wrap.bg-wrap
+								+img(`img/card-3.png`, 'bg')
+					+e.slide.swiper-slide
+						+b.product-card
+							+e.descr #[span Удобный график ] <br> 20 или 40 часов в неделю
+							+e.img-wrap.bg-wrap
+								+img(`img/card-2.png`, 'bg')
+					+e.slide.swiper-slide
+						+b.product-card
+							+e.descr #[span Достойная оплата:]
+							+e.item #[span 52 000] <br> рублей при графике 40 часов в неделю
+							+e.item #[span 26 000] <br> рублей при графике 20 часов в неделю
 	// end sProductSlider

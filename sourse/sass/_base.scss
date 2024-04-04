@@ -126,7 +126,14 @@ main{
 	margin-bottom: var(--sTPB);
 }
 
-
+.section-title{
+  h2 {
+    font-size: rem(24);
+    @include media-breakpoint-up(sm) {
+      font-size: rem(48);
+    }
+  }
+}
 
 .mono {
 	font-family: $font-family-code;

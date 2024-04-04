@@ -61,6 +61,25 @@ function eventHandler() {
 		freeModeMomentum: true,
 	});
 
+  const productSwiper = new Swiper(".sProductSlider__slider--js", {
+		spaceBetween: 16,
+		slidesPerView: "auto",
+		// freeMode: true,
+		loop: false,
+    slidesPerView: 1,
+    breakpoints: { 
+			768: {
+				slidesPerView: 2,
+			},
+      992: {
+        slidesPerView: 2,
+      },
+      // grid: {
+      //   rows: 3,
+      // },
+		}
+	});
+
 	
 }
 if (document.readyState !== "loading") {

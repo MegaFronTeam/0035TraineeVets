@@ -21,10 +21,6 @@
     @include media-breakpoint-down(lg) {
       line-height: $line-height-sm;
     }
-    font-size: rem(24);
-    @include media-breakpoint-up(sm) {
-      font-size: rem(48);
-    }
   }
 	&__col{
 		

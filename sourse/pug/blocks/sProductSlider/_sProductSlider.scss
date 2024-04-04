@@ -2,7 +2,10 @@
 .sProductSlider {
 	// --sPT: #{rem()};
 	// --sPB: #{rem()};
-	// --sTPB: #{rem()};
+	--sTPB: #{rem(24)};
+  @include media-breakpoint-up(lg) {
+    --sTPB: #{rem(48)};
+  }
 	
 	&__row{
 		// --bs-gutter-x: #{rem()};
@@ -17,6 +20,48 @@
 	&__item{
 		
 	}
+  .swiper-wrapper {
+    @include media-breakpoint-up(lg) {
+      @include row-sw;
+      column-gap: rem(40);
+    }
+  }
+  .swiper {
+    overflow: visible;
+    max-width: 90%;
+    margin-left: 0;
+    margin-right: 0;
+    @include media-breakpoint-up(lg) {
+      max-width: 100%;
+      margin-left: rem(20);
+    }
+    &-slide {
+      height: auto;
+      @include media-breakpoint-up(lg) {
+        flex: none !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      &:first-child .bg-wrap {
+        @include block(200, 200);
+      }
+      &:nth-child(3) .bg-wrap {
+        @include block(200, 200);
+      }
+      @include media-breakpoint-up(lg) {
+        .product-card .bg-wrap {
+          @include block(239, 480);
+        }
+      }
+      &:last-child .product-card {
+        justify-content: start;
+        gap: rem(13);
+        @include media-breakpoint-up(lg) {
+          gap: rem(24);
+        }
+      }
+    }
+  }
 
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
@@ -26,3 +71,61 @@
 	@include media-breakpoint-only(xl) {}
 	@include media-breakpoint-down(xl) {}
 } // end.sProductSlider
+
+.product-card {
+  background: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: rem(70);
+  min-height: rem(396);
+  height: 100%;
+  border-radius: $border-radius-sm;
+  padding: rem(20);
+  @include media-breakpoint-up(lg) {
+    border-radius: $border-radius;
+    padding: rem(40);
+  }
+
+  &__descr {
+    color: $blue-600;
+    font-size: rem(24);
+    line-height: 1.2;
+    @include media-breakpoint-up(lg) {
+      font-size: rem(36);
+      line-height: 1.3;
+    }
+    span {
+      font-weight: 700;
+    }
+  }
+
+  &__item {
+    color: $blue-600;
+    font-size: rem(24);
+    line-height: 1.3;
+    @include media-breakpoint-up(lg) {
+      font-size: rem(36);
+    }
+    span {
+      color: $blue-300;
+      font-size: rem(48);
+      font-weight: 700;
+      line-height: 0.9;
+      @include media-breakpoint-up(lg) {
+        font-size: rem(70);
+      }
+      @include media-breakpoint-up(xl) {
+        font-size: rem(112);
+      }
+    }
+  }
+
+  &__img-wrap {
+    overflow: hidden;
+    border-radius: $border-radius-sm;
+    @include media-breakpoint-up(lg) {
+      border-radius: $border-radius-lg;
+    }
+  }
+}

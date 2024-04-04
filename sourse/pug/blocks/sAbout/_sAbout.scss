@@ -27,7 +27,6 @@
       height: rem(156);
       z-index: -2;
       @include media-breakpoint-up(lg) {
-        // right: rem(-64);
         bottom: -23%;
       }
     }
@@ -55,10 +54,6 @@
 	.section-title{
     h2 {
       margin-bottom: 0;
-      font-size: rem(24);
-      @include media-breakpoint-up(sm) {
-        font-size: rem(48);
-      }
     }
 		&__sub-text {
       font-weight: 400;
@@ -101,7 +96,6 @@
 .about-card {
   height: 100%;
   min-height: rem(142);
-  // background: #e7e9ef;
   border-radius: $border-radius-sm;
   padding: rem(20);
   position: relative;

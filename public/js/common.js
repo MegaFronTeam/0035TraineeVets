@@ -61,18 +61,26 @@ function eventHandler() {
 		freeModeMomentum: true,
 	});
 
-	function setTipPosition () {
-    const tooltipTrigger = document.querySelector('.adv-card__descr span')
-    const tooltip = document.querySelector('.adv-card__info');
-    const tooltipBounds = tooltip.getBoundingClientRect(); // Получаем размеры подсказки
+  const productSwiper = new Swiper(".sProductSlider__slider--js", {
+		spaceBetween: 16,
+		slidesPerView: "auto",
+		// freeMode: true,
+		loop: false,
+    slidesPerView: 1,
+    breakpoints: { 
+			768: {
+				slidesPerView: 2,
+			},
+      992: {
+        slidesPerView: 2,
+      },
+      // grid: {
+      //   rows: 3,
+      // },
+		}
+	});
 
-  // Позиционируем подсказку над значком ⓘ
-    tooltip.style.left = (tooltipTrigger.offsetLeft + tooltipTrigger.offsetWidth / 2 ) + 'px';
-    tooltip.style.top = (tooltipTrigger.offsetTop - tooltipBounds.height - 5) + 'px';
-  }
-
-  setTipPosition();
-
+	
 }
 if (document.readyState !== "loading") {
 	eventHandler();
