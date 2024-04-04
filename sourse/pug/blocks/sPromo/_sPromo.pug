@@ -2,8 +2,30 @@ mixin sPromo(data)
 	// start sPromo
 	+b.SECTION.sPromo.section#sPromo&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sPromo
-				
-			+e.row.row
+					+e.row.row
+						+e.col.col-12.col-md-6
+							+e.img-wrap.bg-wrap
+								+img(`img/promo-1.png`, 'bg')
+								+img('img/heart.png').heart
+						+e.col.col-12.col-md-6
+							+e.item
+								+b.section-title
+									h2 #[span Это больше, чем просто работа:]<br>результат твоего труда — здоровье мегаполиса!
+	// end sPromo
+
+mixin sPromo2(data)
+	// start sPromo
+	+b.SECTION.sPromo-2.section#sPromo2&attributes(attributes)
+		.container
+			+e.inner-wrap
+				+e.row.row
+						+e.col.col-12.col-md-4
+							+e.img-wrap.bg-wrap
+								+img(`img/promo-2.png`, 'bg')
+							+img('img/bone.png').bone.d-none.d-lg-block
+						+e.col.col-12.col-md-8
+							+e.item
+								+b.section-title
+									h2 Здоровье большого города — в наших руках!
+								+e.btn.btn.btn-primary Хочу в команду Москвы
 	// end sPromo

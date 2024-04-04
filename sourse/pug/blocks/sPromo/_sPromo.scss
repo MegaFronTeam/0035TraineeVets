@@ -1,22 +1,178 @@
+
 // start .sPromo
 .sPromo {
+  .section-title {
+    font-weight: 400;
+    @include media-breakpoint-up(xl) {
+      margin-left: rem(58);
+    }
+    h2 {
+      font-size: rem(24);
+      font-weight: 400;
+      @include media-breakpoint-up(lg) {
+        font-size: rem(48);
+      }
+    }
+    span {
+      font-weight: 700;
+    }
+    margin-left: rem(17);
+    @include media-breakpoint-up(md) {
+      margin-left: 0;
+    }
+  }
+
+  &__row{
+		// --bs-gutter-x: #{rem()};
+		// --bs-gutter-y: #{rem()};
+    position: relative;
+    @include media-breakpoint-up(md) {
+      align-items: center;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 30%;
+      left: 30%;
+      background: $pink;
+      border-radius: $border-radius-sm;
+      width: rem(211);
+      height: rem(211);
+      z-index: -1;
+      @include media-breakpoint-up(sm) {
+        width: rem(300);
+        height: rem(300);
+      }
+      @include media-breakpoint-up(md) {
+        left: 32%;
+        top: 13%;
+        width: rem(250);
+        height: rem(250);
+      }
+      @include media-breakpoint-up(lg) {
+        width: rem(350);
+        height: rem(350);
+      }
+      @include media-breakpoint-up(xl) {
+        width: rem(439);
+        height: rem(447);
+        border-radius: $border-radius;
+      }
+    }
+	}
+
+  .bg-wrap {
+    max-width: 78%;
+    @include media-breakpoint-up(md) {
+      max-width: none;
+    }
+  }
+
+  &__col{
+    position: relative;
+  }
+
+  .heart {
+    position: absolute;
+    top: 16%;
+    right: rem(0);
+    z-index: 2;
+    width: rem(80);
+    @include media-breakpoint-up(sm) {
+      width: rem(110);
+    }
+    @include media-breakpoint-up(lg) {
+      width: rem(190);
+    }
+  }
+
+}
+
+
+
+
+// start .sPromo-2
+.sPromo-2 {
 	// --sPT: #{rem()};
 	// --sPB: #{rem()};
-	// --sTPB: #{rem()};
-	
+	--sTPB: #{rem(24)};
+  @include media-breakpoint-up(md) {
+    --sTPB: #{0};
+  }
+
+  &__inner-wrap {
+    @include media-breakpoint-down(md) {
+      padding: rem(24);
+      background: $white;
+      border-radius: $border-radius-sm;
+    }
+  }
 	&__row{
 		// --bs-gutter-x: #{rem()};
 		// --bs-gutter-y: #{rem()};
 	}
-	.section-title{
-		
+
+	.section-title {
+    max-width: rem(620);
+		h2 {
+      margin-bottom: 0;
+      font-size: rem(24);
+      @include media-breakpoint-up(md) {
+        text-align: center;
+        font-weight: 400;
+      }
+      @include media-breakpoint-up(lg) {
+        font-size: rem(48);
+      }
+    }
 	}
+
 	&__col{
-		
+    position: relative;
+		.bg-wrap {
+      overflow: hidden;
+      @include block(361, 361);
+      background: $blue-300;
+      border-radius: $border-radius-sm;
+      margin-bottom: rem(24);
+      @include media-breakpoint-up(md) {
+        border-radius: rem(70);
+        margin-bottom: 0;
+      }
+    }
+    .bone {
+      position: absolute;
+      bottom: rem(-30);
+      left: rem(-20);
+      z-index: 2;
+    }
 	}
-	&__item{
-		
+
+	&__item {
+    height: 100%;
+    border-radius: $border-radius-lg;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    // padding: rem(30);
+    @include media-breakpoint-up(md) {
+      padding: rem(20);
+      background: $white;
+    }
+    @include media-breakpoint-up(xl) {
+      padding: rem(40) rem(31);
+    }
 	}
+
+  &__btn {
+    --bs-btn-font-size: #{rem(18)};
+    @include media-breakpoint-down(md) {
+      --bs-btn-font-size: #{rem(16)};
+      --bs-btn-padding-x: #{rem(10)};
+      width: 100%;
+    }
+  }
 
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}

@@ -129,8 +129,10 @@ main{
 .section-title{
   h2 {
     font-size: rem(24);
+    line-height: 1.2;
     @include media-breakpoint-up(sm) {
       font-size: rem(48);
+      line-height: 1.3;
     }
   }
 }
