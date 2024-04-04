@@ -39,7 +39,7 @@ $grays: (
 $blue:    #3F6199; //button, blue-400 в макете
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
-$pink:    #d63384 !default;
+$pink:    #FFE1F0;
 $red:     #dc3545 !default;
 $orange:  #fd7e14 !default;
 $yellow:  #ffc107 !default;
@@ -79,7 +79,7 @@ $color-contrast-light:     $white !default;
 $blue-100: #D9DFEB;
 $blue-200: #9FB0CC;
 $blue-300: #7991B8;
-$blue-400: tint-color($blue, 20%) !default;
+$blue-400: #E5ECFF;
 $blue-500: $blue !default;
 $blue-600: #262262;
 $blue-700: shade-color($blue, 40%) !default;
@@ -543,10 +543,10 @@ $border-color-translucent:    rgba($black, .175) !default;
 // scss-docs-end border-variables
 
 // scss-docs-start border-radius-variables
-$border-radius:               .375rem !default;
-$border-radius-sm:            .25rem !default;
-$border-radius-lg:            .5rem !default;
-$border-radius-xl:            1rem !default;
+$border-radius:               rem(50); //.375rem !default
+$border-radius-sm:            rem(24);//.25rem !default
+$border-radius-lg:            rem(40); //.5rem !default
+$border-radius-xl:            rem(80); //1rem !default
 $border-radius-xxl:           2rem !default;
 $border-radius-pill:          50rem !default;
 // scss-docs-end border-radius-variables
@@ -626,7 +626,7 @@ $font-weight-bolder:          bolder !default;
 $font-weight-base:            $font-weight-normal !default;
 
 $line-height-base:            1.5 !default;
-$line-height-sm:              1.25 !default;
+$line-height-sm:              1.2;
 $line-height-lg:              2 !default;
 
 $h1-font-size:                rem(64);

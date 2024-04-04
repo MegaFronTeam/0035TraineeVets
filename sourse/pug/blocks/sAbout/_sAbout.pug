@@ -3,7 +3,23 @@ mixin sAbout(data)
 	+b.SECTION.sAbout.section#sAbout&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 sAbout
-				
+				h2 Стажировка в ГБУ «Мосветобъединение» —
+				+e.sub-text это забота о тысячах городских питомцев под руководством опытных ветеринарных врачей
 			+e.row.row
+				+e.col.col-12.col-lg-4
+					+aboutCard('300+', 'ветеринарных специалистов')
+				+e.col.col-12.col-lg-4
+					+aboutCard('25', 'ветклиник')
+				+e.col.col-12.col-lg-4
+					+aboutCard('180+', 'ветеринарных услуг')
+				+e.col.col-12.col-lg-6
+					+aboutCard('450 тыс.', 'животных принимаются ежегодно')
+				+e.col.col-12.col-lg-6
+					+aboutCard('5', 'уникальных цифровых сервисов помощи животным')
 	// end sAbout
+
+mixin aboutCard(title, descr)
+	+b.about-card
+		+e.title
+			span!= title
+		+e.descr!= descr

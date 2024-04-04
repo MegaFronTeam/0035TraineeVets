@@ -61,7 +61,18 @@ function eventHandler() {
 		freeModeMomentum: true,
 	});
 
-	
+	function setTipPosition () {
+    const tooltipTrigger = document.querySelector('.adv-card__descr span')
+    const tooltip = document.querySelector('.adv-card__info');
+    const tooltipBounds = tooltip.getBoundingClientRect(); // Получаем размеры подсказки
+
+  // Позиционируем подсказку над значком ⓘ
+    tooltip.style.left = (tooltipTrigger.offsetLeft + tooltipTrigger.offsetWidth / 2 ) + 'px';
+    tooltip.style.top = (tooltipTrigger.offsetTop - tooltipBounds.height - 5) + 'px';
+  }
+
+  setTipPosition();
+
 }
 if (document.readyState !== "loading") {
 	eventHandler();

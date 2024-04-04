@@ -2,15 +2,30 @@
 .sAdvantages {
 	// --sPT: #{rem()};
 	// --sPB: #{rem()};
-	// --sTPB: #{rem()};
+	--sTPB: #{rem(24)};
+  @include media-breakpoint-up(lg) {
+    --sTPB: #{rem(48)};
+  }
 	
 	&__row{
 		// --bs-gutter-x: #{rem()};
-		// --bs-gutter-y: #{rem()};
+    --bs-gutter-y: #{rem(16)};
+    @include media-breakpoint-up(lg) {
+      --bs-gutter-y: #{rem(40)};
+    }
 	}
 	.section-title{
 		
 	}
+  h2 {
+    @include media-breakpoint-down(lg) {
+      line-height: $line-height-sm;
+    }
+    font-size: rem(24);
+    @include media-breakpoint-up(sm) {
+      font-size: rem(48);
+    }
+  }
 	&__col{
 		
 	}
@@ -26,3 +41,58 @@
 	@include media-breakpoint-only(xl) {}
 	@include media-breakpoint-down(xl) {}
 } // end.sAdvantages
+
+.adv-card {
+  height: 100%;
+  padding: rem(20);
+  background: $white;
+  border-radius: $border-radius-sm;
+  @include media-breakpoint-up(lg) {
+    min-height: rem(320);
+    padding: rem(40);
+    border-radius: $border-radius;
+  }
+
+  h3 {
+    line-height:  $line-height-sm;
+    @include media-breakpoint-down(lg) {
+      font-size: rem(24);
+    }
+  }
+
+  &__descr {
+    position: relative;
+    color: $primary;
+    font-size: rem(16);
+    @include media-breakpoint-up(lg) {
+      font-size: rem(22);
+    }
+  }
+
+  span {
+    cursor: pointer;
+    position: relative;
+  }
+
+  &__info {
+    position: absolute;
+    // bottom: rem(25);
+    // left: rem(10);
+    display: inline-block;
+    z-index: 5;
+    width: rem(560);
+    @include media-breakpoint-down(md) {
+      max-width: 100%;
+    }
+    padding: rem(30) rem(40);
+    border: 1px solid $blue-200;
+    background: $white;
+    color: $gray-600;
+    border-radius: $border-radius-sm $border-radius-sm $border-radius-sm 0;
+    @include media-breakpoint-up(lg) {
+      border-radius: rem(60) rem(60) rem(60) 0;
+    }
+  }
+
+
+}
