@@ -5,6 +5,7 @@
 	--sTPB: #{rem(45)};
 	@include media-breakpoint-up(md) {
     --sTPB: #{rem(80)};
+    --sPB: #{rem(0)};
   }
 	@include media-breakpoint-up(lg) {
     --sTPB: #{rem(120)};
