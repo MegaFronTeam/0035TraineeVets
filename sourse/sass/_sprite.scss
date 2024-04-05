@@ -22,6 +22,11 @@
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(27 / #{$h} *1em );
 }
+.icon-cup {
+	$h: 90;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(94 / #{$h} *1em );
+}
 .icon-fb {
 	$h: 24;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
@@ -31,6 +36,16 @@
 	$h: 24;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(24 / #{$h} *1em );
+}
+.icon-mail {
+	$h: 54;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(54 / #{$h} *1em );
+}
+.icon-rocket {
+	$h: 84;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(84 / #{$h} *1em );
 }
 .icon-telegram {
 	$h: 16;
@@ -42,6 +57,16 @@
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(16 / #{$h} *1em );
 }
+.icon-video {
+	$h: 99;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(98 / #{$h} *1em );
+}
+.icon-video-1 {
+	$h: 98;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(97 / #{$h} *1em );
+}
 .icon-vk {
 	$h: 24;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
@@ -51,4 +76,19 @@
 	$h: 16;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(16 / #{$h} *1em );
+}
+.icon-zig-zag-1 {
+	$h: 120;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(107 / #{$h} *1em );
+}
+.icon-zig-zag-2 {
+	$h: 170;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(100 / #{$h} *1em );
+}
+.icon-zig-zag-3 {
+	$h: 124;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(156 / #{$h} *1em );
 }

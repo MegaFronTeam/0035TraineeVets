@@ -12,7 +12,9 @@
 		// --bs-gutter-y: #{rem()};
 	}
 	.section-title{
-		
+		@include media-breakpoint-up(sm) {
+      text-align: center;
+    }
 	}
 	&__col{
 		

@@ -155,7 +155,6 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    // padding: rem(30);
     @include media-breakpoint-up(md) {
       padding: rem(20);
       background: $white;

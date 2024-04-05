@@ -2,8 +2,27 @@ mixin sRecruitment(data)
 	// start sRecruitment
 	+b.SECTION.sRecruitment.section#sRecruitment&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sRecruitment
-				
-			+e.row.row
+			+b.section-title
+				h2 Как попасть на стажировку
+			+e.steps-container
+				+b.step-card
+					+e.descr
+						h3 Подай заявку
+						p Заполни анкету #[a(href='#') по ссылке]
+					+e.icon-wrap
+						+icon(`mail`)
+						+icon(`zig-zag-1`)
+				+stepCard('Пройди тестирование и запиши видеовизитку', 'Пройди несколько онлайн-тестов на логику и мотивацию, и мы пришлем ссылку на запись видеовизитки', 'video-1', 'zig-zag-2')
+				+stepCard('Участвуй в очном этапе отбора', 'Ты сможешь продемонстрировать свои знания и навыки на тестовом дне в одной из клиник, а еще познакомишься с будущим руководителем', 'cup', 'zig-zag-1')
+				+stepCard('Подпиши договор и начни стажировку', 'Остается только подписать документы, получить все необходимое для работы и познакомиться с командой', 'rocket', 'zig-zag-3')
+			//- +e.row.row
 	// end sRecruitment
+
+mixin stepCard(title, descr, icon, zigZag)
+		+b.step-card
+			+e.descr
+				h3!= title
+				p!= descr
+			+e.icon-wrap
+				+icon(`${icon}`)
+				+icon(`${zigZag}`)
