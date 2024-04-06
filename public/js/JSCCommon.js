@@ -413,7 +413,7 @@ export default class JSCCommon {
 
 	static init() {
 		this.modalCall();
-		// this.tabsCostume('tabs');
+		this.tabsCostume('tabs');
 		this.mobileMenu();
 		this.inputMask();
 		// this.sendForm();

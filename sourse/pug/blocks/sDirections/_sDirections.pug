@@ -2,8 +2,72 @@ mixin sDirections(data)
 	// start sDirections
 	+b.SECTION.sDirections.section#sDirections&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sDirections
-				
-			+e.row.row
+			+e.inner-wrapper
+				+b.section-title
+					h2 Направления, в которых ты будешь развиваться
+				.tabs
+					+e.row.row
+						+e.col.d-none.col-4.d-lg-block
+							.tabs__caption
+								.tabs__btn.active
+									+tabsBtn('medicine', 'Лечебно-профилактическое')
+								.tabs__btn
+									+tabsBtn('surgery', 'Хирургическое')
+								.tabs__btn
+									+tabsBtn('tablet', 'Терапевтическое')
+							+e.description
+								+e.stars
+									+icon('star')
+									+icon('star')
+								+e.info А также работа с документами и электронными базами данных в области ветеринарии
+						+e.col.col.accordeon-js
+							+e.content-title.d-none.d-lg-block Примеры задач
+							.tabs__content.active
+								.tabs__btn.active.d-lg-none
+									+tabsBtn('medicine', 'Лечебно-профилактическое')
+								.content_wrapper.active
+									+b.UL.directions-wrapper
+										+e.LI.el Клинический осмотр животных
+										+e.LI.el Отбор проб биоматериала для проведения мониторинговых исследований в рамках противоэпизоотических мероприятий
+									+b.UL.directions-wrapper
+										+e.LI.el Профилактические вакцинации против вирусных заболеваний
+										+e.LI.el Обследование животных на экто- и эндопаразитов
+							.tabs__content
+								.tabs__btn.d-lg-none
+									+tabsBtn('surgery', 'Хирургическое')
+								.content_wrapper
+									+b.UL.directions-wrapper
+										+e.LI.el Анестезия и анальгезия
+										+e.LI.el Оперативные вмешательства различной категории сложности
+									+b.UL.directions-wrapper
+										+e.LI.el Родовспоможение
+										+e.LI.el Обработка и перевязка ран и прочее
+							.tabs__content
+								.tabs__btn.d-lg-none
+									+tabsBtn('tablet', 'Терапевтическое')
+								.content_wrapper
+									+b.UL.directions-wrapper
+										+e.LI.el Сбор анамнеза жизни и болезни животных для выявления причин возникновения заболеваний и их характера
+										+e.LI.el Общие клинические исследования животных с целью установления предварительного диагноза и определения дальнейшего порядка проведения лечебно-диагностических манипуляций
+										+e.LI.el Особенности проведения приема и обследования животных в зависимости от вида (собаки, кошки, грызуны, рептилии и прочее)
+										+e.LI.el Методики взятия крови, постановка катетера, взятие мазков и прочее
+									+b.UL.directions-wrapper
+										+e.LI.el Проведение клинических исследований животных с использованием специальных (инструментальных) и лабораторных методов для уточнения диагноза
+										+e.LI.el Постановка диагноза и разработка плана лечения животных
+										+e.LI.el Отбор проб биоматериала
+										+e.LI.el Изучение методов лабораторной диагностики (общеклинический и биохимический анализы биоматериала)
+										+e.LI.el Изучение методов клинической диагностики (рентгенография, УЗИ, эхокардиография, ЭКГ)
+							+e.description.d-lg-none
+								+e.stars
+									+icon('star')
+									+icon('star')
+								+e.info А также работа с документами и электронными базами данных в области ветеринарии
+
+
 	// end sDirections
+
+mixin tabsBtn(icon, title)
+	+b.tab-element
+		+e.item
+			+icon(`${icon}`)
+			+e.btn-title!= title

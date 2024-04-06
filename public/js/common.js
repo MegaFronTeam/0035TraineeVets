@@ -80,6 +80,15 @@ function eventHandler() {
 		}
 	});
 
+  const tabsHeads = document.querySelectorAll('.accordeon-js .tabs__btn')
+  const tabsContent = document.querySelectorAll('.accordeon-js .content_wrapper')
+  tabsHeads.forEach((tab, i) => {
+    tab.addEventListener('click', () => {
+      tab.classList.toggle('active')
+      tabsContent[i].classList.toggle('active')
+    })
+  })
+
 	
 }
 if (document.readyState !== "loading") {
@@ -87,6 +96,10 @@ if (document.readyState !== "loading") {
 } else {
 	document.addEventListener("DOMContentLoaded", eventHandler);
 }
+
+// $(function () {
+//   $('[data-toggle="tooltip"]').tooltip()
+// })
 
 // window.onload = function () {
 // 	document.body.classList.add('loaded_hiding');

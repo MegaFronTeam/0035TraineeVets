@@ -42,10 +42,30 @@
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(54 / #{$h} *1em );
 }
+.icon-medicine {
+	$h: 50;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(50 / #{$h} *1em );
+}
 .icon-rocket {
 	$h: 84;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(84 / #{$h} *1em );
+}
+.icon-star {
+	$h: 33;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(33 / #{$h} *1em );
+}
+.icon-surgery {
+	$h: 50;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(50 / #{$h} *1em );
+}
+.icon-tablet {
+	$h: 50;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(50 / #{$h} *1em );
 }
 .icon-telegram {
 	$h: 16;
