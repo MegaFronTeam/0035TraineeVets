@@ -77,16 +77,20 @@ export default class JSCCommon {
 	static toggleMenu() {
 		const toggle = document.querySelectorAll(".toggle-menu-mobile--js");
 		const menu = document.querySelector(".menu-mobile--js");
+    const topNav = document.querySelector(".top-nav")
 		this.toggleClass(toggle, "on");
 		menu.classList.toggle("active");
 		this.toggleClass([document.body, document.querySelector("html")], "fixed");
+    topNav.classList.toggle("active");
 	}
 	static closeMenu() {
 		const toggle = document.querySelectorAll(".toggle-menu-mobile--js");
 		const menu = document.querySelector(".menu-mobile--js");
+    const topNav = document.querySelector(".top-nav")
 		this.removeClass(toggle, "on");
 		if (menu) {
 			menu.classList.remove("active");
+      topNav.classList.remove("active");
 			this.removeClass(
 				[document.body, document.querySelector("html")],
 				"fixed"
@@ -105,6 +109,7 @@ export default class JSCCommon {
 			},
 			{passive: true}
 		);
+
 
 		window.addEventListener(
 			"resize",

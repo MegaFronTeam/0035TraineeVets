@@ -37,6 +37,16 @@
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(24 / #{$h} *1em );
 }
+.icon-logo {
+	$h: 49;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(114 / #{$h} *1em );
+}
+.icon-logo-img {
+	$h: 52;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(46 / #{$h} *1em );
+}
 .icon-mail {
 	$h: 54;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);

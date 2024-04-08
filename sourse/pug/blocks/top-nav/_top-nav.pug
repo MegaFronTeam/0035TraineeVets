@@ -22,13 +22,17 @@ mixin top-nav()
 	+b.top-nav.block-with-lazy
 		.container
 			+e.row.row
-				.col-4
-				.col.order-lg-0.order-last
+				.col-auto
+					.logo-container
+						+icon('logo-img')
+						+icon('logo')
+				.col.col-auto.col-lg.order-lg-0.order-last
 					.menu-mobile.menu-mobile--js
 						.menu-mobile__inner
 							+menu-toggle()
 							+mnu()
-					
-				.col-auto.d-lg-none
+							+e.btn.btn.btn-primary.btn-sm(href='#').d-lg-none Подать заявку
+				.col-auto.d-none.d-lg-flex: +e.btn.btn.btn-primary.btn-sm(href='#') Подать заявку
+				.col-auto.ms-auto.d-lg-none
 					+menu-toggle()
 	// end top-nav

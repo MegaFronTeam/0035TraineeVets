@@ -3,6 +3,7 @@
 
 		display: flex;
 		text-align: center;
+    justify-content: flex-end;
 		@include roww(20px);
 		flex-wrap: wrap;
 	}
@@ -12,14 +13,19 @@
 	margin-bottom: 0;
 	max-width: 100%;
 	li{
-		
 		// margin-left: 0;
 		// margin-right: 0;
 		padding: 0;
 	}
 	a{
 		display: block;
-		padding: rem(20) calc(var(--bs-gutter-x) / 2);
+		padding: rem(20) rem(14);
+    @include media-breakpoint-up(xl) {
+      padding: rem(20) rem(16);
+    }
+    color: $gray-600;
+    font-size: rem(16);
+    text-decoration: none;
 	}
 }
 
@@ -27,8 +33,8 @@
 
 .toggle-menu-mobile {
 	--h: #{em(2)};
-	--color: #{$primary};
-	--position: calc(var(--h) * 2);
+	--color: #{$blue-600};
+	--position: calc(var(--h) * 3.5);
 	&.on span {
 		--color: transparent;
 	}
@@ -39,8 +45,8 @@
 	}
 	display: block;
 	height: calc(var(--h)* 12);
-	position: relative; 
-	font-size: 32px;
+	position: relative;
+	font-size: 28px;
 	width: 1em;
 	cursor: pointer;
 	span:after,
@@ -52,15 +58,20 @@
 	span {
 		@include a-cent(y);
 		display: block;
+    // stroke: var(--color);
+    // stroke-width:"2";
+    // stroke-linecap: "round";
 	}
 
 	span:before { 
 		top: var(--position);
+    --color: #{$purple};
 		transform: rotate3d(0,0,1, var(--rotate, 0));
 	}
 
 	span:after {
 		bottom: var(--position);
+    --color: #{$purple};
 		transform: rotate3d(0,0,1, calc(-1 * var(--rotate,0)));
 	}
 	span,
@@ -77,16 +88,14 @@
 }
 @include media-breakpoint-down(lg) {
 
-	
-
 	.menu-mobile {
 		position: fixed !important;
 		z-index: 999;
-		max-width: 85%;
+		max-width: 100%;
 		// height: calc(var(--vh, 1vh) * 100);
 		// height: 100vh;
-		width: 280px;
-		top: 0;
+		width: 320px;
+		top: rem(65);
 		// left: 0;
 		right: 0;
 		background-color: $body-bg;
@@ -100,10 +109,9 @@
 		@include mt(.6s);
 		will-change: transform;
 
-		
-		.toggle-menu-mobile { 
+		.toggle-menu-mobile {
 			margin-left: -15%;
-			position: absolute; 
+			position: absolute;
 			left: 0;
 			right: auto;
 			color: #FFF;
@@ -115,11 +123,16 @@
 			}
 		}
 		&__inner {
-			padding: calc(env(safe-area-inset-top, 0px) + #{rem(20)}) 0 calc(env(safe-area-inset-bottom, 0px) + #{rem(20)});
+			padding: rem(7) rem(16);
+      box-shadow: inset 0 4px 20px 0 rgba(11, 31, 53, 0.05);
 			overflow-x: hidden;
 			overflow-y: auto;
 			-webkit-overflow-scrolling: touch;
 			height: 100vh;
+      background: $white;
+      span {
+        display: none;
+      }
 			// @include mt(.3s);
 			// transition-delay: .4s;
 			// opacity: var(--opacity);
@@ -134,20 +147,26 @@
 
 		ul {
 			position: relative;
+      margin-bottom: rem(32);
 		}
 
 		li {
 			display: block;
 			margin: 0;
-			border-top: 1px solid rgba(255, 255, 255, .13);
+			border-bottom: 1px solid $gray-300;
 
 			a {
-				// font-size: 16px;
-
-				padding: 10px;
+				font-size: 18px;
+        color: $purple;
+				padding: rem(15) 0;
 				display: block;
 
 			}
 		}
+    .btn {
+      font-size: rem(16);
+      width: 100%;
+      --bs-btn-padding-y: #{rem(8)};
+    }
 	}
 }
