@@ -91,6 +91,15 @@
       border-radius: rem(60) rem(60) rem(60) 0;
     }
   }
+}
 
-
+.popover {
+  --bs-body-bg: #{$white};
+  --bs-body-color: #{$gray-600};
+  @include media-breakpoint-up(lg) {
+    --bs-popover-max-width: #{rem(560)};
+    --bs-popover-font-size: #{rem(22)} !important;
+    --bs-popover-body-padding-x: #{rem(40)};
+    --bs-popover-body-padding-y: #{rem(30)};
+  }
 }

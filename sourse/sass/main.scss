@@ -33,6 +33,7 @@ $output-bourbon-deprecation-warnings: false;
 @import "base";
 
 @import '../pug/blocks/**/*.scss';
+@import "./node_modules/bootstrap/scss/popover";
 // @import '../pug/blocks/form-wrap/form-wrap.scss';
 
 // @import '../pug/blocks/topLine/_topLine.scss';
