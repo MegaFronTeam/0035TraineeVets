@@ -1,7 +1,7 @@
 // start .sAdvantages
 .sAdvantages {
 	// --sPT: #{rem()};
-	// --sPB: #{rem()};
+	--sPB: #{rem(40)};
 	--sTPB: #{rem(24)};
   @include media-breakpoint-up(lg) {
     --sTPB: #{rem(48)};
@@ -50,7 +50,7 @@
   }
 
   h3 {
-    line-height:  $line-height-sm;
+    line-height:  1.2;
     @include media-breakpoint-down(lg) {
       font-size: rem(24);
     }
@@ -60,8 +60,10 @@
     position: relative;
     color: $primary;
     font-size: rem(16);
+    line-height: 1.45;
     @include media-breakpoint-up(lg) {
       font-size: rem(22);
+      line-height: 1.5;
     }
   }
 

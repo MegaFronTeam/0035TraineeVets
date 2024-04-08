@@ -2,8 +2,20 @@ mixin sCandidates(data)
 	// start sCandidates
 	+b.SECTION.sCandidates.section#sCandidates&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sCandidates
-				
-			+e.row.row
+			+b.section-title
+				h2 Эта стажировка для тебя, если:
+			+e.cards
+				+personCard('candidate-1', 'ты студент<br>последнего курса<br> или выпускник<br>профильного вуза')
+				+personCard('candidate-2', 'и тебе до 35 лет<br>включительно')
+				+img('img/star.png').img
+				+img('img/star.png').img
+				+img('img/star.png').img
+				+img('img/bone.png').img
+				+img('img/cross.png').img
 	// end sCandidates
+
+mixin personCard(img, text)
+	+b.person-card
+		+e.img-wrap.bg-wrap
+			+img(`img/${img}.png`, 'bg')
+		+e.text.text-center!= text

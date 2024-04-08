@@ -1,15 +1,30 @@
 // start .sCandidates
 .sCandidates {
-	// --sPT: #{rem()};
+	--sPT: #{rem(0)};
 	// --sPB: #{rem()};
-	// --sTPB: #{rem()};
+	--sTPB: #{rem(24)};
+  --sPB: #{rem(36)};
+  @include media-breakpoint-up(md) {
+    --sTPB: #{rem(68)};
+    --sPB: #{rem(215)};
+  }
 	
 	&__row{
 		// --bs-gutter-x: #{rem()};
 		// --bs-gutter-y: #{rem()};
 	}
 	.section-title{
-		
+		@include media-breakpoint-up(md) {
+      text-align: center;
+    }
+
+    h2 {
+      line-height: 1.2;
+      @include media-breakpoint-up(md) {
+        line-height: 1.3;
+      }
+
+    }
 	}
 	&__col{
 		
@@ -17,6 +32,104 @@
 	&__item{
 		
 	}
+
+  &__cards {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    @include media-breakpoint-up(md) {
+      flex-direction: row;
+      justify-content: center;
+      left: rem(20);
+    }
+
+    .img {
+      position: absolute;
+
+      /* stars */
+      &:nth-child(3) {
+        width: rem(120);
+        top: 1%;
+        right: -5%;
+        transform: rotate(30deg);
+        z-index: -1;
+        @include media-breakpoint-up(md) {
+          width: rem(220);
+          top: rem(8);
+          left: -20%;
+        }
+        @include media-breakpoint-up(lg) {
+          left: rem(-26);
+        }
+      }
+
+      &:nth-child(4) {
+        width: rem(70);
+        top: 24%;
+        right: -8%;
+        transform: rotate(-30deg);
+        z-index: -1;
+        @include media-breakpoint-up(md){
+          width: rem(120);
+          top: 61%;
+          left: -21%;
+        }
+        @include media-breakpoint-up(lg) {
+          left: -3%;
+        }
+      }
+
+      &:nth-child(5) {
+        width: rem(50);
+        top: 39%;
+        right: 6%;
+        transform: rotate(-50deg);
+        z-index: -1;
+        @include media-breakpoint-up(md) {
+          width: rem(80);
+          top: 100%;
+          left: -7%;
+        }
+        @include media-breakpoint-up(lg) {
+          top: 98%;
+          left: 8%;
+        }
+      }
+
+      /* bone */
+      &:nth-child(6) {
+        width: rem(120);
+        top: 80%;
+        right: 75%;
+        transform: rotate(250deg);
+        z-index: -1;
+        @include media-breakpoint-up(md) {
+          width: rem(230);
+          top: -7%;
+          right: 10%;
+          transform: rotate(-30deg);
+        }
+      }
+
+      /* cross */
+      &:nth-child(7) {
+        width: rem(100);
+        top: 52%;
+        right: 80%;
+        transform: rotate(-20deg);
+        z-index: -2;
+        @include media-breakpoint-up(md) {
+          width: rem(127);
+          top: 56%;
+          right: -12%;
+          transform: rotate(0deg);
+        }
+        @include media-breakpoint-up(lg) {
+          right: 1%;
+        }
+      }
+    }
+  }
 
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
@@ -26,3 +139,71 @@
 	@include media-breakpoint-only(xl) {}
 	@include media-breakpoint-down(xl) {}
 } // end.sCandidates
+
+.person-card {
+  // width: rem(211);
+  aspect-ratio: 211/290;
+  max-width: 72%;
+  min-height: rem(300);
+  background: $white;
+  padding: rem(12);
+  padding-bottom: rem(16);
+  border-radius: rem(8);
+  @include media-breakpoint-up(sm) {
+    aspect-ratio: auto;
+    min-height: rem(540);
+  }
+  @include media-breakpoint-up(md) {
+    width: rem(400);
+    padding: rem(20);
+    padding-bottom: rem(27);
+    border-radius: rem(16);
+  }
+  @include media-breakpoint-up(lg) {
+    min-height: rem(600);
+
+  }
+
+  .bg-wrap {
+    overflow: hidden;
+    @include block(360, 360);
+    background: $pink;
+    margin-bottom: rem(8);
+    @include media-breakpoint-up(md) {
+      margin-bottom: rem(21);
+    }
+  }
+
+  &:nth-child(1) {
+    box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  &:nth-child(2) {
+    align-self: end;
+    position: relative;
+    z-index: -1;
+    top: rem(-16);
+    @include media-breakpoint-up(md) {
+      top: rem(150);
+      left: rem(-30);
+    }
+    @include media-breakpoint-up(lg) {
+      top: rem(164);
+      left: rem(-65);
+    }
+    .bg-wrap{
+      background: $blue-200;
+    }
+  }
+
+  &__text {
+    font-size: rem(16);
+    line-height: 120%;
+    color: $blue-600;
+    // max-width: rem(250);
+    @include media-breakpoint-up(sm) {
+      font-size: rem(36);
+      // max-width: 100%;
+    }
+  }
+}
