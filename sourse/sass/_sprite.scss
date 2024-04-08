@@ -27,6 +27,11 @@
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(94 / #{$h} *1em );
 }
+.icon-dzen {
+	$h: 32;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(32 / #{$h} *1em );
+}
 .icon-fb {
 	$h: 24;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
@@ -42,6 +47,11 @@
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(114 / #{$h} *1em );
 }
+.icon-logo-full {
+	$h: 40;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(137 / #{$h} *1em );
+}
 .icon-logo-img {
 	$h: 52;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
@@ -52,10 +62,20 @@
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(54 / #{$h} *1em );
 }
+.icon-mail-sm {
+	$h: 24;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(24 / #{$h} *1em );
+}
 .icon-medicine {
 	$h: 50;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(50 / #{$h} *1em );
+}
+.icon-mkp {
+	$h: 42;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(136 / #{$h} *1em );
 }
 .icon-rocket {
 	$h: 84;
@@ -78,9 +98,14 @@
 	width: calc(50 / #{$h} *1em );
 }
 .icon-telegram {
-	$h: 16;
+	$h: 32;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
-	width: calc(16 / #{$h} *1em );
+	width: calc(32 / #{$h} *1em );
+}
+.icon-vet {
+	$h: 74;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(83 / #{$h} *1em );
 }
 .icon-viber {
 	$h: 16;
@@ -98,9 +123,9 @@
 	width: calc(97 / #{$h} *1em );
 }
 .icon-vk {
-	$h: 24;
+	$h: 32;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
-	width: calc(24 / #{$h} *1em );
+	width: calc(32 / #{$h} *1em );
 }
 .icon-whatsapp {
 	$h: 16;
@@ -121,4 +146,14 @@
 	$h: 124;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(156 / #{$h} *1em );
+}
+.icon-zig-zag-arr {
+	$h: 167;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(176 / #{$h} *1em );
+}
+.icon-zig-zag-arr-sm {
+	$h: 140;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(112 / #{$h} *1em );
 }

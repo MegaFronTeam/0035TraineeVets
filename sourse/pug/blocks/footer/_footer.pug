@@ -1,9 +1,36 @@
 mixin footer()
 	+b.FOOTER.footer.section
 		.container
-			.row
-				.col
-					
-				.col Footer
-				.col
-				.col-auto
+			+e.inner-wrapper
+				.row
+					.col-12.col-lg-6
+						+e.content-wrapper
+							h2 Остались вопросы?
+							p Пишите нам на почту.<br>Мы читаем все письма. Мы обязательно вам ответим.
+							+e.link.mail-link(href='mailto:job@mos.ru').d-lg-none
+								+icon('mail-sm')
+								| job@mos.ru
+							p А еще в Правительстве Москвы есть шесть других направлений стажировки: от «HR-&nbsp;города» до «Городской экономики и финансов».
+							+e.link.link-more(href='https://talent.mos.ru/internships/') Узнай больше на Карьерном портале Правительства Москвы
+							+icon('zig-zag-arr-sm')
+						+e.links-wrapper.d-md-none
+							+e.link(href='#') Карьерный портал
+							+e.link(href='#') Техподдержка
+						+b.icons-wrapper
+							+e.link(href='#')
+								+icon('vk')
+							+e.link(href='#')
+								+icon('dzen')
+							+e.link(href='#')
+								+icon('telegram')
+						+b.logos-wrapper
+							+icon('logo-full')
+							+icon('mkp')
+							+icon('vet')
+						+e.text © Кадровые сервисы Правительства Москвы, 2024
+					.col.d-none.d-lg-block
+						+e.img-wrap.bg-wrap
+							+img(`img/footer.png`, 'bg')
+							+icon('zig-zag-arr')
+							+e.link.mail-link(href='mailto:job@mos.ru').d-none.d-md-block
+								| job@mos.ru

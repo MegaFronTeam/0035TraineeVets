@@ -1,10 +1,11 @@
 // start .sQuestions
 .sQuestions {
 	--sPT: #{rem(15)};
-	// --sPB: #{rem()};
+	--sPB: #{rem(40)};
 	// --sTPB: #{rem()};
 	@include media-breakpoint-up(lg) {
     --sPT: #{rem(80)};
+    --sPB: #{rem(160)};
   }
 
 	&__row{
