@@ -35,9 +35,8 @@ mixin modal()
 						+in-c('radio','Да')(checked)
 						+in-c('radio','Нет')
 					+input("Направление второго приоритета",'select')
-					+b.LABEL.add-resume
-						input(type="file", name="", onchange="loadFile(event)")
-						p Резюме
+					+b.LABEL.add-resume Резюме
+						input(type="file", name="upload", onchange="loadFile(event)")
 						+icon('upload')
 					+e.capture Подтвердите, что вы не робот, введите символы с картинки#[span *]
 					+e.capture-wrap

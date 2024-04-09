@@ -58,6 +58,7 @@
     position: relative;
     margin-top: rem(18);
     margin-bottom: rem(24);
+    color: $gray-500;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -69,11 +70,6 @@
       cursor: pointer;
       @include a-cent;
       opacity: 0;
-    }
-    p {
-      cursor: pointer;
-      margin-bottom: 0;
-      color: $gray-500;
     }
 
     .icon {
