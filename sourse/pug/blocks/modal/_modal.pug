@@ -39,7 +39,12 @@ mixin modal()
 						input(type="file", name="", onchange="loadFile(event)")
 						p Резюме
 						+icon('upload')
-					//- +add-file('Резюме')
+					+e.capture Подтвердите, что вы не робот, введите символы с картинки#[span *]
+					+e.capture-wrap
+						+e.capture-place
+							+img('img/capture.png')
+							+input("", 'text')(required)
+						+img('img/capture-btn.png')
 					+policy()
 					+e.BUTTON.btn.btn.btn-primary(type="submit"	) Подать заявку
 	// #modal-call

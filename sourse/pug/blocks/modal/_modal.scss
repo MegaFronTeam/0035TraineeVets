@@ -11,7 +11,7 @@
 	background-color: #fff;
 	max-width: 100%;
 	position: relative;
-	width: rem(600);
+	width: rem(620);
 	// min-height: 100%; 
 	padding: 32px;
   border-radius: 20px;
@@ -56,8 +56,8 @@
 
   .add-resume{
     position: relative;
-    margin-top: rem(24);
-    margin-bottom: rem(20);
+    margin-top: rem(18);
+    margin-bottom: rem(24);
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -83,6 +83,32 @@
     }
   }
 
+  .form-wrap__capture {
+    color: $gray-200;
+    margin-bottom: rem(16);
+    line-height: 1;
+    font-size: rem(18);
+    span {
+      color: $red;
+    }
+  }
+
+  .form-wrap__capture-wrap{
+    margin-bottom: rem(24);
+  }
+
+  .form-wrap__capture-place {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: rem(20);
+    .form-control {
+      padding: rem(10);
+      width: rem(184);
+      border-radius: 0;
+    }
+  }
+
   .form-wrap__policy {
     max-width: rem(390);
     margin-bottom: rem(20);
@@ -94,13 +120,10 @@
     }
     a {
       color: inherit;
+
     }
     label:first-child {
       margin-bottom: rem(24);
-    }
-
-    label {
-      // display: flex;
     }
 
     .form-check {
