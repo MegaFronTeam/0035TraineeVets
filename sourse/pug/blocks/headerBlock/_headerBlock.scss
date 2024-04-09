@@ -51,7 +51,7 @@
 
   .col {
     @include media-breakpoint-down(md) {
-      height: rem(310);
+      height: rem(300);
     }
   }
 

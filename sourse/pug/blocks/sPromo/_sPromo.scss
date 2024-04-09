@@ -1,6 +1,8 @@
 
 // start .sPromo
 .sPromo {
+	// --sPT: #{rem()};
+	--sPB: #{rem(15)};
   .section-title {
     font-weight: 400;
     @include media-breakpoint-up(xl) {
@@ -11,6 +13,9 @@
       font-weight: 400;
       @include media-breakpoint-up(lg) {
         font-size: rem(48);
+      }
+      @include media-breakpoint-down(sm) {
+        max-width: rem(220);
       }
     }
     span {
@@ -131,11 +136,12 @@
     position: relative;
 		.bg-wrap {
       overflow: hidden;
-      @include block(361, 361);
+      @include block(200, 240);
       background: $blue-300;
       border-radius: $border-radius-sm;
       margin-bottom: rem(24);
       @include media-breakpoint-up(md) {
+        @include block(361, 361);
         border-radius: rem(70);
         margin-bottom: 0;
       }
@@ -171,6 +177,9 @@
       --bs-btn-font-size: #{rem(16)};
       --bs-btn-padding-x: #{rem(10)};
       width: 100%;
+    }
+    @include media-breakpoint-down(sm) {
+      --bs-btn-padding-y: #{rem(8)};
     }
   }
 

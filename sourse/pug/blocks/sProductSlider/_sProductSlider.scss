@@ -1,10 +1,11 @@
 // start .sProductSlider
 .sProductSlider {
 	// --sPT: #{rem()};
-	// --sPB: #{rem()};
+	--sPB: #{rem(38)};
 	--sTPB: #{rem(24)};
   @include media-breakpoint-up(lg) {
     --sTPB: #{rem(48)};
+    --sPB: #{rem(78)};
   }
 	
 	&__row{
@@ -26,6 +27,7 @@
     @include media-breakpoint-up(lg) {
       @include row-sw;
       column-gap: rem(40);
+      row-gap: rem(10);
     }
   }
   .swiper {
@@ -79,14 +81,19 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: rem(70);
-  min-height: rem(396);
+  gap: rem(26);
+  min-height: rem(380);
   height: 100%;
   border-radius: $border-radius-sm;
   padding: rem(20);
   @include media-breakpoint-up(lg) {
     border-radius: $border-radius;
     padding: rem(40);
+    gap: rem(30);
+  }
+  
+  @include media-breakpoint-up(xl) {
+    gap: rem(48);
   }
 
   &__descr {

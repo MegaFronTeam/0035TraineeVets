@@ -10,7 +10,11 @@
 
 	}
   @include mt(.3s);
-  position: relative;
+  // position: relative;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
   z-index: 1000;
   padding-top: rem(12);
   padding-bottom: rem(12);

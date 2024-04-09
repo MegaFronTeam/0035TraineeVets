@@ -1,10 +1,11 @@
 // start .sAbout
 .sAbout {
 	// --sPT: #{rem()};
-	// --sPB: #{rem()};
+	--sPB: #{rem(20)};
 	--sTPB: #{rem(16)};
   @include media-breakpoint-up(lg) {
     --sTPB: #{rem(48)};
+    --sPB: #{rem(78)};
   }
 	
 	&__row{
@@ -79,11 +80,15 @@
         max-width: rem(240);
       }
     }
-    
   }
-	&__item{
-		
-	}
+	.col-lg-6:last-child {
+    span {
+      @include media-breakpoint-up(lg) {
+        padding-left: rem(14);
+        padding-right: rem(10);
+      }
+    }
+  }
 
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
