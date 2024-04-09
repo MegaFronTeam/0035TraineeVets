@@ -102,6 +102,11 @@
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(32 / #{$h} *1em );
 }
+.icon-upload {
+	$h: 25;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(24 / #{$h} *1em );
+}
 .icon-vet {
 	$h: 74;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);

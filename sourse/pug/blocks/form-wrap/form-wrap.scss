@@ -1,7 +1,7 @@
 .form-wrap {
 	&__input-wrap {
 		// @extend .form-group;
-		margin-bottom: rem(15);
+		margin-bottom: rem(12);
 	}
 	&__input {
 		// @extend .form-control;
@@ -16,6 +16,22 @@
 		width: 100%;
 		display: block;
 	}
+
+  &__title {
+    line-height: 1.1;
+		margin-bottom: rem(20);
+    @include media-breakpoint-up(lg) {
+      margin-bottom: rem(32);
+      font-size: rem(48);
+    }
+    span {
+      color: $primary;
+    }
+    @include media-breakpoint-down(lg) {
+      // font-size: rem(36);
+    }
+  }
+
 }
 
 //
@@ -57,4 +73,27 @@ input::-webkit-inner-spin-button {
 	-webkit-appearance: none;
 	margin: 0;
 	/* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.form-control {
+  padding-bottom: rem(14);
+  --bs-border-color: #{$gray-100};
+}
+
+.form-select, .select2-container--default .select2-selection {
+  --bs-border-color: #{$gray-100};
+}
+.form-control::placeholder {
+  color: $gray-500;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  color: $gray-500;
+}
+
+.select2-results__option {
+  // --selectable-color: #fff;
+  // --selected-bg: #eceff2;
+  // --selectable-color: #{$blue-600};
+  --selected-color: #{$blue-600};
+  color: $blue-600;
 }

@@ -26,15 +26,14 @@ block pagecontent
 		.section.container 
 			mixin btn(a, t)
 				a( href= a).btn.btn-primary.link-modal-js= t
-			+btn("#modal-call", 'call')
+			+btn("#modal-order", 'Подать заявку на стажировку')
 		.section.container
 			.col-8
 				+form-wrap
 					+input("input")
 					+input("select",'select')
 					+input("select",'select')(multiple)
-					button.btn.btn-primary(type="submit") submit
-		+sCatalog
+					button.btn.btn-primary(type="submit") Подать заявку
 	+parts('footer')
       
 

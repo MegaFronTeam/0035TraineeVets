@@ -59,11 +59,14 @@ mixin add-file(n)
 		label
 			+e.INPUT.input(name='file', type='file')
 			+e.SPAN.btn 
-			+e.SPAN.text   Прикрепить резюме
+			+e.SPAN.text Резюме
 		+e.SPAN.filename 
 
 
 mixin policy()
 	+e.policy
 		+in-c()(checked)
-			+e.SMALL.text.text-secondary Согласен на обработку и хранение моих персональных данных в соответствии с условиями
+			+e.text.text-secondary Согласие на обработку 
+				a(href='#') персональных данных
+		+in-c()(checked)
+			+e.text.text-secondary Согласен получать рассылку Молодежных карьерных проектов Правительства Москвы

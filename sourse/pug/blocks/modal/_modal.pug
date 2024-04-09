@@ -1,7 +1,7 @@
 
 mixin modal() 
-	//  start modals
-	div(id="modal-call"  style="display: none" )
+	//	start modals
+	div(id="modal-call"	style="display: none" )
 		+b.modal-win
 			+form-wrap
 				.text-center
@@ -11,10 +11,37 @@ mixin modal()
 				+input("Ваше Имя")(required)
 				+input("Ваше телефон",'tel')(required)
 				+input("Ваше телефон",'tel')(required)
-				+e.BUTTON.btn.btn(type="submit"  ) submit
+				+e.BUTTON.btn.btn(type="submit"	) submit
 				+policy()
 				+policy()
 	// #modal-call
 
+	div(id="modal-order"	style="display: none" )
+			+b.modal-win
+				+form-wrap
+					.text-center
+						+e.title.form-data.h3 Подать заявку #[span на&nbsp;стажировку]
+					+input("ФИО", 'text')(required)
+					+input("Дата рождения",'text')(required)
+					//- (required readonly autocomplete="off"  class="date-input").data-picker--js
+					+input("Телефон",'tel')(required)
+					+input("Электронная почта",'email')(required)
+					+input("Вуз", 'text')(required)
+					+input("Специальность", 'text')(required)
+					+input("Год окончания", 'number')(required)
+					+input("Направление стажировки",'select')
+					+e.radio-descr Готов рассматривать альтернативное направление
+					.radio-wrap
+						+in-c('radio','Да')(checked)
+						+in-c('radio','Нет')
+					+input("Направление второго приоритета",'select')
+					+b.LABEL.add-resume
+						input(type="file", name="", onchange="loadFile(event)")
+						p Резюме
+						+icon('upload')
+					//- +add-file('Резюме')
+					+policy()
+					+e.BUTTON.btn.btn.btn-primary(type="submit"	) Подать заявку
+	// #modal-call
 	
 	// end modals
