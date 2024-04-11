@@ -84,6 +84,7 @@
     align-self: end;
     position: relative;
     display: flex;
+    flex-shrink: 0;
     justify-content: center;
     align-items: center;
     margin-right: rem(10);
@@ -139,6 +140,12 @@
         margin-top: rem(30);
       }
     }
+    .img {
+      max-width: rem(70);
+      @include media-breakpoint-up(lg) {
+        max-width: rem(95);
+      }
+    }
   }
 
   &:nth-child(3) {
@@ -164,6 +171,12 @@
     .step-card__icon-wrap {
       @include media-breakpoint-up(lg) {
         margin-top: rem(30);
+      }
+    }
+    .img {
+      max-width: rem(80);
+      @include media-breakpoint-up(lg) {
+        max-width: rem(115);
       }
     }
   }
