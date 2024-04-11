@@ -2,6 +2,7 @@
 import "../libs/jquery/jquery.min.js";
 import "../libs/select2/js/select2.min.js";
 import "../libs/select2/js/i18n/ru.js";
+import "../libs/swiper/swiper-bundle.min.js";
 import {Fancybox} from "../libs/@fancyapps/ui/fancybox/fancybox.esm.js";
 import Inputmask from "../libs/inputmask/inputmask.es6.js";
 
@@ -77,20 +78,20 @@ export default class JSCCommon {
 	static toggleMenu() {
 		const toggle = document.querySelectorAll(".toggle-menu-mobile--js");
 		const menu = document.querySelector(".menu-mobile--js");
-    const topNav = document.querySelector(".top-nav")
+		const topNav = document.querySelector(".top-nav");
 		this.toggleClass(toggle, "on");
 		menu.classList.toggle("active");
 		this.toggleClass([document.body, document.querySelector("html")], "fixed");
-    topNav.classList.toggle("active");
+		topNav.classList.toggle("active");
 	}
 	static closeMenu() {
 		const toggle = document.querySelectorAll(".toggle-menu-mobile--js");
 		const menu = document.querySelector(".menu-mobile--js");
-    const topNav = document.querySelector(".top-nav")
+		const topNav = document.querySelector(".top-nav");
 		this.removeClass(toggle, "on");
 		if (menu) {
 			menu.classList.remove("active");
-      topNav.classList.remove("active");
+			topNav.classList.remove("active");
 			this.removeClass(
 				[document.body, document.querySelector("html")],
 				"fixed"
@@ -105,12 +106,12 @@ export default class JSCCommon {
 				let container = event.target.closest(".menu-mobile--js");
 				let toggle = event.target.closest(".toggle-menu-mobile--js");
         const link = event.target.closest('.menu-item')
-				if (toggle || link) this.toggleMenu();
+				if (toggle) this.toggleMenu();
 				if (!container && !toggle) this.closeMenu();
+				if (link) this.closeMenu();
 			},
 			{passive: true}
 		);
-
 
 		window.addEventListener(
 			"resize",
@@ -419,7 +420,7 @@ export default class JSCCommon {
 
 	static init() {
 		this.modalCall();
-		this.tabsCostume('tabs');
+		this.tabsCostume("tabs");
 		this.mobileMenu();
 		this.inputMask();
 		// this.sendForm();

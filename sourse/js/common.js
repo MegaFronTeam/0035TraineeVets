@@ -1,6 +1,6 @@
 "use strict";
 
-import Swiper from '../libs/swiper/swiper-bundle.min.mjs';
+// import Swiper from '../libs/swiper/swiper-bundle.min.mjs';
 import JSCCommon from "./JSCCommon.js";
 
 const $ = jQuery;
@@ -61,37 +61,42 @@ function eventHandler() {
 		freeModeMomentum: true,
 	});
 
-  const productSwiper = new Swiper(".sProductSlider__slider--js", {
+	const productSwiper = new Swiper(".sProductSlider__slider--js", {
 		spaceBetween: 16,
 		slidesPerView: "auto",
 		// freeMode: true,
 		loop: false,
-    slidesPerView: 1,
-    breakpoints: { 
+		slidesPerView: 1,
+		breakpoints: {
 			768: {
 				slidesPerView: 2,
 			},
-      992: {
-        slidesPerView: 2,
-      },
-      // grid: {
-      //   rows: 3,
-      // },
-		}
+			992: {
+				slidesPerView: 2,
+			},
+			// grid: {
+			//   rows: 3,
+			// },
+		},
 	});
 
-  const tabsHeads = document.querySelectorAll('.accordeon-js .tabs__btn')
-  const tabsContent = document.querySelectorAll('.accordeon-js .content_wrapper')
-  tabsHeads.forEach((tab, i) => {
-    tab.addEventListener('click', () => {
-      tab.classList.toggle('active')
-      tabsContent[i].classList.toggle('active')
-    })
-  })
+	const tabsHeads = document.querySelectorAll(".accordeon-js .tabs__btn");
+	const tabsContent = document.querySelectorAll(
+		".accordeon-js .content_wrapper"
+	);
+	tabsHeads.forEach((tab, i) => {
+		tab.addEventListener("click", () => {
+			tab.classList.toggle("active");
+			tabsContent[i].classList.toggle("active");
+		});
+	});
 
-	const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-  const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
-
+	const popoverTriggerList = document.querySelectorAll(
+		'[data-bs-toggle="popover"]'
+	);
+	const popoverList = [...popoverTriggerList].map(
+		popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl)
+	);
 }
 if (document.readyState !== "loading") {
 	eventHandler();
