@@ -423,6 +423,7 @@ export default class JSCCommon {
 		this.tabsCostume("tabs");
 		this.mobileMenu();
 		this.inputMask();
+    this.animateScroll();
 		// this.sendForm();
 		this.heightWindow();
 		this.makeDDGroup();
