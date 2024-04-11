@@ -1,5 +1,5 @@
 /**
- * Swiper 11.1.0
+ * Swiper 11.1.1
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: March 28, 2024
+ * Released on: April 9, 2024
  */
 
 var Swiper = (function () {
@@ -2776,7 +2776,7 @@ var Swiper = (function () {
         data.startMoving = true;
       }
     }
-    if (data.isScrolling) {
+    if (data.isScrolling || e.type === 'touchmove' && data.preventTouchMoveFromPointerMove) {
       data.isTouched = false;
       return;
     }
