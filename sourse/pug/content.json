@@ -1,9 +1,9 @@
 {
 	"nav":[
-		{ "name":"ГБУ «Мосветобъединение»", "url":"#"},
-		{	"name":"Направления", "url":"#"},
-		{"name":"Условия", "url":"#"},
-		{"name":"Этапы отбора", "url":"#"}
+		{ "name":"ГБУ «Мосветобъединение»", "url":"#sAbout"},
+		{	"name":"Направления", "url":"#sDirections"},
+		{"name":"Условия", "url":"#sProductSlider"},
+		{"name":"Этапы отбора", "url":"#sRecruitment"}
 	],
 	"social":[
 		"fb","instagram","telegram"

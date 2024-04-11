@@ -122,7 +122,7 @@
     .accordeon-js {
       .tabs__btn.active {
         .tab-element:after {
-          transform: rotate(-180deg);
+          transform: rotate(0deg);
         }
       }
       .content_wrapper {
@@ -253,7 +253,7 @@
     width: rem(32);
     height: rem(32);
     min-width: rem(32);
-    transform: rotate(-90deg);
+    transform: rotate(-180deg);
     background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 20L16 10L26 20' stroke='%23262262' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' /%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: center;
