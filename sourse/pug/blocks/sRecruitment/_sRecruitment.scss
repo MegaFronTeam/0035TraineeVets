@@ -123,6 +123,13 @@
     @include media-breakpoint-up(lg) {
       margin-bottom: rem(80);
     }
+    .img {
+      max-width: rem(55);
+      margin-bottom: rem(8);
+      @include media-breakpoint-up(lg) {
+        max-width: rem(95);
+      }
+    }
   }
 
   &:nth-child(2) {
@@ -156,6 +163,9 @@
     .step-card__icon-wrap {
       @include media-breakpoint-up(lg) {
         margin-top: rem(40);
+        .img {
+          margin-left: rem(8);
+        }
       }
     }
   }
@@ -174,9 +184,9 @@
       }
     }
     .img {
-      max-width: rem(80);
+      width: rem(80);
       @include media-breakpoint-up(lg) {
-        max-width: rem(115);
+        width: rem(115);
       }
     }
   }

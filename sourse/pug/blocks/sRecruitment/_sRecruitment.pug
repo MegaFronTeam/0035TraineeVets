@@ -10,7 +10,7 @@ mixin sRecruitment(data)
 						h3 Подай заявку
 						p Заполни анкету #[a(href='#') по ссылке]
 					+e.icon-wrap
-						+icon(`mail`)
+						+img(src=`img/mail.svg`, alt="").img
 						+icon(`zig-zag-1`)
 				+stepCard('Пройди тестирование и запиши видеовизитку', 'Пройди несколько онлайн-тестов на логику и мотивацию, и мы пришлем ссылку на запись видеовизитки', 'video', 'zig-zag-2')
 				+stepCard('Участвуй в очном этапе отбора', 'Ты сможешь продемонстрировать свои знания и навыки на тестовом дне в одной из клиник, а еще познакомишься с будущим руководителем', 'cup', 'zig-zag-1')
@@ -24,5 +24,5 @@ mixin stepCard(title, descr, icon, zigZag)
 				h3!= title
 				p!= descr
 			+e.icon-wrap
-				+img(src=`img/${icon}.png`, alt="").img
+				+img(src=`img/${icon}.svg`, alt="").img
 				+icon(`${zigZag}`)
