@@ -119,7 +119,7 @@ $pink-900: shade-color($pink, 80%) !default;
 $red-100: tint-color($red, 80%) !default;
 $red-200: tint-color($red, 60%) !default;
 $red-300: tint-color($red, 40%) !default;
-$red-400: tint-color($red, 20%) !default;
+$red-400: #FF0F43;
 $red-500: $red !default;
 $red-600: shade-color($red, 20%) !default;
 $red-700: shade-color($red, 40%) !default;
@@ -1084,10 +1084,10 @@ $form-floating-transition:              opacity .1s ease-in-out, transform .1s e
 
 // scss-docs-start form-feedback-variables
 $form-feedback-margin-top:          $form-text-margin-top !default;
-$form-feedback-font-size:           $form-text-font-size !default;
+$form-feedback-font-size:           rem(14);
 $form-feedback-font-style:          $form-text-font-style !default;
 $form-feedback-valid-color:         $success !default;
-$form-feedback-invalid-color:       $danger !default;
+$form-feedback-invalid-color:       $red-400;
 
 $form-feedback-icon-valid-color:    $form-feedback-valid-color !default;
 $form-feedback-icon-valid:          url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><path fill='#{$form-feedback-icon-valid-color}' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/></svg>") !default;

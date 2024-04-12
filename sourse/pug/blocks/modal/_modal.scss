@@ -184,6 +184,11 @@
   //   }
   // }
 
+  .invalid-feedback.d-md-none {
+    position: relative;
+    bottom: rem(-8);
+  }
+
   .btn {
     width: 100%;
     --bs-btn-font-size: rem(18);

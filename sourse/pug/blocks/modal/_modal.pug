@@ -22,8 +22,8 @@ mixin modal()
 					.text-center
 						.title.form-data.h3 Подать заявку на&nbsp;стажировку
 					.input-title.d-sm-none ФИО*
-					+input("ФИО*", 'text')(required).is-invalid
-						.invalid-feedback Введи ФИО
+					+input("ФИО*", 'text')(required)
+						//- .invalid-feedback Введи ФИО
 					//- (required readonly autocomplete="off"  class="date-input").data-picker--js
 					.input-title.d-sm-none Телефон*
 					+input("Телефон*",'tel')(required).is-invalid
@@ -44,6 +44,7 @@ mixin modal()
 					.input-title.d-sm-none Год окончания*
 					+input("Год окончания*", 'number')(required).is-invalid
 						.invalid-feedback Укажи год выпуска
+					.invalid-feedback.d-md-none.text-center Не все поля заполнены
 					+e.BUTTON.btn.btn.btn-primary(type="submit", href='#modal-success').link-modal-js Подать заявку
 					+e.text.text-center.text-secondary Нажимая кнопку «Отправить заявку», я принимаю условия 
 						a(href='#') политики обработки персональных данных.
