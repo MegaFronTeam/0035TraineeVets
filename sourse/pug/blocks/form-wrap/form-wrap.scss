@@ -98,6 +98,7 @@ input::-webkit-inner-spin-button {
 
 .form-wrap__input {
   @include media-breakpoint-down(sm) {
+    border-color: $blue-200;
     border-top: none !important;
     border-left: none !important;
     border-right: none !important;
