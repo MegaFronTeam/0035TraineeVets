@@ -65,8 +65,11 @@
   },
   "dependencies": {
     "@fancyapps/ui": "^5.0.32",
+    "imports-loader": "^5.0.0",
     "inputmask": "^5.0.8",
     "jquery": "^3.7.1",
+    "jquery-mousewheel": "^3.1.13",
+    "malihu-custom-scrollbar-plugin": "^3.1.5",
     "select2": "^4.1.0-rc.0",
     "swiper": "^11.0.5"
   }

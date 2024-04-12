@@ -3,6 +3,7 @@ import "../libs/jquery/jquery.min.js";
 import "../libs/select2/js/select2.min.js";
 import "../libs/select2/js/i18n/ru.js";
 import "../libs/swiper/swiper-bundle.min.js";
+import "../libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js";
 import {Fancybox} from "../libs/@fancyapps/ui/fancybox/fancybox.esm.js";
 import Inputmask from "../libs/inputmask/inputmask.es6.js";
 
@@ -46,6 +47,11 @@ export default class JSCCommon {
 				AJAX_NOT_FOUND: "Ошибка при загрузке AJAX: не найдено",
 				AJAX_FORBIDDEN: "Ошибка при загрузке AJAX: запрещено",
 				IFRAME_ERROR: "Ошибка загрузки iframe",
+			},
+      on: {
+				done: (fancybox) => {
+					this.setCustomScrollbar();
+				},
 			},
 		});
 		document.querySelectorAll(".modal-close-js").forEach(el => {
@@ -199,6 +205,13 @@ export default class JSCCommon {
 			InputTel
 		);
 	}
+  static setCustomScrollbar() {
+		$(".custom-scroll").mCustomScrollbar({
+			theme: 'minimal-dark',
+			alwaysShowScrollbar: true
+		});
+	}
+
 	// /inputMask
 	static sendForm() {
 		var gets = (function () {
@@ -424,6 +437,7 @@ export default class JSCCommon {
 		this.tabsCostume("tabs");
 		this.mobileMenu();
 		this.inputMask();
+    this.setCustomScrollbar();
     this.animateScroll();
 		// this.sendForm();
 		this.heightWindow();
