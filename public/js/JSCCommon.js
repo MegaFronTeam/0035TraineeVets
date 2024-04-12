@@ -191,10 +191,10 @@ export default class JSCCommon {
 		InputTel.forEach(element =>
 			element.setAttribute(
 				"pattern",
-				"[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}"
+				"[+][7]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}"
 			)
 		);
-		Inputmask({mask: "+9(999)999-99-99", showMaskOnHover: false}).mask(
+		Inputmask({mask: "+7(999)999-99-99", showMaskOnHover: false}).mask(
 			InputTel
 		);
 	}

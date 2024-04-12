@@ -20,32 +20,49 @@ mixin modal()
 			+b.modal-win
 				+form-wrap
 					.text-center
-						+e.title.form-data.h3 Подать заявку #[span на&nbsp;стажировку]
-					+input("ФИО", 'text')(required)
-					+input("Дата рождения",'text')(required)
+						.title.form-data.h3 Подать заявку на&nbsp;стажировку
+					.input-title.d-sm-none ФИО*
+					+input("ФИО*", 'text')(required).is-invalid
+						.invalid-feedback Введи ФИО
 					//- (required readonly autocomplete="off"  class="date-input").data-picker--js
-					+input("Телефон",'tel')(required)
-					+input("Электронная почта",'email')(required)
-					+input("Вуз", 'text')(required)
-					+input("Специальность", 'text')(required)
-					+input("Год окончания", 'number')(required)
-					+input("Направление стажировки",'select')
-					+e.radio-descr Готов рассматривать альтернативное направление
-					.radio-wrap
-						+in-c('radio','Да')(checked)
-						+in-c('radio','Нет')
-					+input("Направление второго приоритета",'select')
-					+b.LABEL.add-resume Резюме
-						input(type="file", name="upload", onchange="loadFile(event)")
-						+icon('upload')
-					+e.capture Подтвердите, что вы не робот, введите символы с картинки#[span *]
-					+e.capture-wrap
-						+e.capture-place
-							+img('img/capture.png')
-							+input("", 'text')(required)
-						+img('img/capture-btn.png')
-					+policy()
-					+e.BUTTON.btn.btn.btn-primary(type="submit"	) Подать заявку
+					.input-title.d-sm-none Телефон*
+					+input("Телефон*",'tel')(required).is-invalid
+						.invalid-feedback Это поле обязательно для заполнения
+					.input-title.d-sm-none E-mail*
+					+input("E-mail*",'email')(required).is-invalid
+						.invalid-feedback Укажи адрес почты
+					.radio-wrap.is-invalid
+						+in-c('radio','Гражданство РФ')
+						+in-c('radio','Гражданство другого государства')
+						.invalid-feedback Укажи гражданство
+					.input-title.d-sm-none Вуз*
+					+input("Вуз*", 'text')(required).is-invalid
+						.invalid-feedback Укажи высшее учебное заведение
+					.input-title.d-sm-none Специальность*
+					+input("Специальность*", 'text')(required).is-invalid
+						.invalid-feedback Укажи специальность
+					.input-title.d-sm-none Год окончания*
+					+input("Год окончания*", 'number')(required).is-invalid
+						.invalid-feedback Укажи год выпуска
+					+e.BUTTON.btn.btn.btn-primary(type="submit", href='#modal-success').link-modal-js Подать заявку
+					+e.text.text-center.text-secondary Нажимая кнопку «Отправить заявку», я принимаю условия 
+						a(href='#') политики обработки персональных данных.
 	// #modal-call
-	
+
+	// #modal-success
+	div(id="modal-success"  style="display: none" )
+		+b.modal-win--success
+			.text-center
+				.title.form-data.h3 Итак, первый шаг к карьере мечты сделан!
+				.title-sub В течение 2 недель на твою электронную почту придет письмо, в котором мы расскажем о дальнейших действиях.
+				p А пока — узнай больше о карьере в Правительстве Москвы!
+			.d-flex
+				mixin item(i, t, link)
+					+e.item(href=`${link}` target="_blank")
+						+e.qr-wrap
+							+e.item-title= t
+							+img(`img/${i}.png`)
+				+item(`tg`,`Телеграм`,`https://t.me/moscow_career`)
+				+item(`vk`,`ВКонтакте`, `https://vk.com/moscow_career`)
+				+item(`site`,`Сайт`, `https://talent.mos.ru/`)
 	// end modals

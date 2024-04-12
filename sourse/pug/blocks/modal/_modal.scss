@@ -10,11 +10,21 @@
 	// display: block;
 	background-color: #fff;
 	max-width: 100%;
+  margin: auto;
 	position: relative;
 	width: rem(620);
 	// min-height: 100%; 
-	padding: 32px;
-  border-radius: 20px;
+	padding: rem(24) rem(12);
+  border-radius: 24px;
+  // margin-right: rem(16);
+  // margin-left: rem(16);
+  @include media-breakpoint-up(md) {
+    padding: 32px;
+    border-radius: 40px;
+  }
+  @include media-breakpoint-down(md) {
+    max-width: calc( 100% - 32px);
+  }
 
 	.modal-content {
 		// max-width: 485px;
@@ -30,18 +40,30 @@
   }
 
   .radio-wrap {
-    display: flex;
-    gap: rem(40);
+    margin-top: rem(10);
     margin-bottom: rem(20);
+    @include media-breakpoint-up(sm) {
+      margin-top: rem(20);
+    }
     label {
-      width: auto;
+      width: max-content;
+      max-width: 100%;
+      margin-bottom: rem(8);
+      line-height: 24px;
+      @include media-breakpoint-up(md) {
+        margin-bottom: rem(16);
+      }
     }
 
     input {
-      width: 24px;
-      height: 24px;
+      width: 16px;
+      height: 16px;
       --bs-border-color: #{$primary};
+      @include media-breakpoint-up(md) {
+        width: 24px;
+        height: 24px;
       margin-top: rem(2);
+      }
     }
 
     .form-check-input:checked[type=radio] {
@@ -49,35 +71,52 @@
     }
 
     span {
-      color: $gray-200;
+      color: $blue-600;
+      @include media-breakpoint-up(md) {
       padding-left: rem(9);
+
+      }
     }
   }
 
-  .add-resume{
-    position: relative;
-    margin-top: rem(18);
-    margin-bottom: rem(24);
-    color: $gray-500;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: $gray-100 rem(1) solid;
-    border-radius: rem(4);
-    padding: rem(16);
-    input{
-      cursor: pointer;
-      @include a-cent;
-      opacity: 0;
+  .title {
+    line-height: 1.1;
+		margin-bottom: rem(16);
+    font-size: rem(24);
+    color: $primary;
+    @include media-breakpoint-up(lg) {
+      margin-bottom: rem(20);
+      font-size: rem(36);
     }
-
-    .icon {
-      stroke-width: rem(2);
-      stroke: $blue-600;
-      fill: none;
+    @include media-breakpoint-down(lg) {
+      // font-size: rem(36);
     }
   }
+
+  // .add-resume{
+  //   position: relative;
+  //   margin-top: rem(18);
+  //   margin-bottom: rem(24);
+  //   color: $gray-500;
+  //   cursor: pointer;
+  //   display: flex;
+  //   justify-content: space-between;
+  //   align-items: center;
+  //   border: $gray-100 rem(1) solid;
+  //   border-radius: rem(4);
+  //   padding: rem(16);
+  //   input{
+  //     cursor: pointer;
+  //     @include a-cent;
+  //     opacity: 0;
+  //   }
+
+  //   .icon {
+  //     stroke-width: rem(2);
+  //     stroke: $blue-600;
+  //     fill: none;
+  //   }
+  // }
 
   .form-wrap__capture {
     color: $gray-200;
@@ -105,38 +144,57 @@
     }
   }
 
-  .form-wrap__policy {
-    max-width: rem(390);
-    margin-bottom: rem(20);
-    span {
-      font-size: rem(14);
-      display: block;
-      line-height: 1.43;
-      padding-top: rem(4);
-    }
+  .form-wrap__text {
+    font-size: rem(14);
+    // line-height: 20px;
     a {
       color: inherit;
-
-    }
-    label:first-child {
-      margin-bottom: rem(24);
-    }
-
-    .form-check {
-      padding-left: rem(36);
-    }
-
-    .form-check-input {
-      width: rem(24);
-      height: rem(24);
-      margin-left: rem(-36);
     }
   }
+
+  .input-title {
+    color: $primary;
+  }
+
+  // .form-wrap__policy {
+  //   max-width: rem(390);
+  //   margin-bottom: rem(20);
+  //   span {
+  //     font-size: rem(14);
+  //     display: block;
+  //     line-height: 1.43;
+  //     padding-top: rem(4);
+  //   }
+  //   a {
+  //     color: inherit;
+
+  //   }
+  //   label:first-child {
+  //     margin-bottom: rem(24);
+  //   }
+
+  //   .form-check {
+  //     padding-left: rem(36);
+  //   }
+
+  //   .form-check-input {
+  //     width: rem(24);
+  //     height: rem(24);
+  //     margin-left: rem(-36);
+  //   }
+  // }
 
   .btn {
     width: 100%;
     --bs-btn-font-size: rem(18);
-    margin-bottom: 0;
+    margin-bottom: rem(20);
+    margin-top: rem(10);
+    @include media-breakpoint-down(md) {
+      --bs-btn-padding-x: #{rem(8)};
+      --bs-btn-padding-y: #{rem(10)};
+      --bs-btn-font-size:  #{rem(16)};
+      margin-bottom: rem(8);
+    }
   }
 
 	.mfp-close {
@@ -144,6 +202,91 @@
 		font-size: 40px;
 		font-weight: 100;
 	}
+
+  &--success {
+    // padding-top: rem(52);
+
+    @include media-breakpoint-up(md) {
+      padding: rem(40) rem(40) !important;
+    }
+    @include media-breakpoint-down(sm) {
+      padding-bottom: rem(50);
+    }
+    .d-flex {
+      justify-content: space-evenly;
+      @include media-breakpoint-down(sm) {
+        flex-direction: column;
+        align-items: center;
+        gap: rem(20);
+      }
+    }
+
+    .title {
+      margin-bottom: rem(24) !important;
+    }
+
+    .title-sub {
+      color: $primary;
+      padding-bottom: rem(32);
+      margin-bottom: rem(32);
+      border-bottom: rem(1) solid $blue-200;
+      @include media-breakpoint-up(md) {
+        margin-bottom: rem(48);
+        padding-bottom: 0;
+        border: none;
+
+      }
+    }
+    p {
+      color: $blue-600;
+      @include media-breakpoint-down(sm) {
+        margin-bottom: rem(24);
+      }
+    }
+
+    .title-sub,
+    p {
+      font-size: rem(18);
+      line-height: 111%;
+      @include media-breakpoint-up(md) {
+        font-size: rem(24);
+        line-height: 133%;
+      }
+    }
+    .modal-win__item {
+      width: min-content;
+      @include media-breakpoint-down(sm) {
+        width: 100%;
+        img {
+          display: none;
+        }
+      }
+    }
+
+    a {
+      @include media-breakpoint-down(sm) {
+        text-decoration: none;
+      }
+    }
+    .modal-win__item-title {
+        text-align: center;
+      @include media-breakpoint-up(sm) {
+        font-size: rem(24);
+        color: $blue-600;
+        margin-bottom: rem(10);
+      }
+      @include media-breakpoint-down(sm) {
+        font-size: rem(18);
+        color: $white;
+        background: $primary;
+        width: 100%;
+        padding: rem(7) 0;
+        border-radius: rem(8);
+        line-height: 1.2;
+
+      }
+    }
+  }
 
 }
 
@@ -296,8 +439,13 @@ a {
 }
 
 .fancybox__content>.f-button.is-close-btn {
-  right: -40px;
+  right: 10px;
+  top: -44px;
   --f-button-color: #{$white};
   --f-button-width: 40px;
   --f-button-height: 40px;
+  @include media-breakpoint-up(md) {
+    right: -20px;
+    top: -38px;
+  }
 }

@@ -1,7 +1,10 @@
 .form-wrap {
 	&__input-wrap {
 		// @extend .form-group;
-		margin-bottom: rem(12);
+		margin-bottom: rem(8);
+    @include media-breakpoint-up(md) {
+      margin-bottom: rem(12);
+    }
 	}
 	&__input {
 		// @extend .form-control;
@@ -17,20 +20,7 @@
 		display: block;
 	}
 
-  &__title {
-    line-height: 1.1;
-		margin-bottom: rem(20);
-    @include media-breakpoint-up(lg) {
-      margin-bottom: rem(32);
-      font-size: rem(48);
-    }
-    span {
-      color: $primary;
-    }
-    @include media-breakpoint-down(lg) {
-      // font-size: rem(36);
-    }
-  }
+  
 
 }
 
@@ -80,6 +70,13 @@ input::-webkit-inner-spin-button {
   --bs-border-color: #{$gray-100};
 }
 
+.form-control:focus {
+  border-color: $cyan;
+  &::placeholder {
+    color: $blue-200;
+  }
+}
+
 .form-select, .select2-container--default .select2-selection {
   --bs-border-color: #{$gray-100};
 }
@@ -96,4 +93,30 @@ input::-webkit-inner-spin-button {
   // --selectable-color: #{$blue-600};
   --selected-color: #{$blue-600};
   color: $blue-600;
+}
+
+
+.form-wrap__input {
+  @include media-breakpoint-down(sm) {
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-radius: 0 !important;
+    padding-left: 0;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    // .div:first-child {
+    //   display: none !important;
+    // }
+  }
+}
+.form-control::placeholder {
+  @include media-breakpoint-down(sm) {
+    color: transparent !important;
+  }
+}
+.form-control {
+  @include media-breakpoint-down(sm) {
+    font-size: rem(16);
+  }
 }

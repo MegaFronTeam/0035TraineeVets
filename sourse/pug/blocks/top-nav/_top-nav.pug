@@ -31,8 +31,8 @@ mixin top-nav()
 						.menu-mobile__inner
 							+menu-toggle()
 							+mnu()
-							+e.btn.btn.btn-primary.btn-sm(href='#').d-lg-none Подать заявку
-				.col-auto.d-none.d-lg-flex: +e.btn.btn.btn-primary.btn-sm(href='#') Подать заявку
+							+e.btn.btn.btn-primary.btn-sm.d-lg-none(href='#modal-order').link-modal-js Подать заявку
+				.col-auto.d-none.d-lg-flex: +e.btn.btn.btn-primary.btn-sm(href='#modal-order').link-modal-js Подать заявку
 				.col-auto.ms-auto.d-lg-none
 					+menu-toggle()
 	// end top-nav

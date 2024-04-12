@@ -62,35 +62,7 @@
 				<div class="section container"> <a class="btn btn-primary link-modal-js" href="#modal-order">Подать заявку на стажировку</a>
 				</div>
 				<div class="section container">
-					<div class="col-8">
-						<div class="form-wrap">
-							<form>
-								<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" inputmode="text" name="text" type="text" placeholder="input"/>
-								</div>
-								<!-- +e.input-wrap-->
-								<div class="form-wrap__input-wrap form-group custom-select-wrap">
-									<select class="form-wrap__input form-select custom-select-js" name="select" data-placeholder="select">
-										<option value="select">select</option>
-										<option value="select1">select1</option>
-										<option value="select2">select2</option>
-										<option value="select3">select3</option>
-										<option value="select4">select4</option>
-									</select>
-								</div>
-								<!-- +e.input-wrap-->
-								<div class="form-wrap__input-wrap form-group custom-select-wrap">
-									<select class="form-wrap__input form-select custom-select-js" name="select" data-placeholder="select" multiple="multiple">
-										<option value="select">select</option>
-										<option value="select1">select1</option>
-										<option value="select2">select2</option>
-										<option value="select3">select3</option>
-										<option value="select4">select4</option>
-									</select>
-								</div>
-								<!-- +e.input-wrap-->
-								<button class="btn btn-primary" type="submit">Подать заявку</button>
-							</form>
-						</div>
+					<div class="col-8"><a class="btn btn-primary link-modal-js" href="#modal-success">Подать заявку</a>
 					</div>
 				</div>
 			</main>
@@ -140,86 +112,84 @@
 				<div class="form-wrap">
 					<form>
 						<div class="text-center">
-							<div class="form-wrap__title form-data h3">Подать заявку <span>на&nbsp;стажировку</span>
-							</div>
+							<div class="title form-data h3">Подать заявку на&nbsp;стажировку</div>
 						</div>
-						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" inputmode="text" name="text" type="text" placeholder="ФИО" required="required"/>
-						</div>
-						<!-- +e.input-wrap-->
-						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" inputmode="text" name="text" type="text" placeholder="Дата рождения" required="required"/>
+						<div class="input-title d-sm-none">ФИО*</div>
+						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control is-invalid" inputmode="text" name="text" type="text" placeholder="ФИО*" required="required"/>
+							<div class="invalid-feedback">Введи ФИО</div>
 						</div>
 						<!-- +e.input-wrap-->
-						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" inputmode="tel" name="tel" type="tel" placeholder="Телефон" required="required"/>
+						<div class="input-title d-sm-none">Телефон*</div>
+						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control is-invalid" inputmode="tel" name="tel" type="tel" placeholder="Телефон*" required="required"/>
+							<div class="invalid-feedback">Это поле обязательно для заполнения</div>
 						</div>
 						<!-- +e.input-wrap-->
-						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" inputmode="email" name="email" type="email" placeholder="Электронная почта" required="required"/>
+						<div class="input-title d-sm-none">E-mail*</div>
+						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control is-invalid" inputmode="email" name="email" type="email" placeholder="E-mail*" required="required"/>
+							<div class="invalid-feedback">Укажи адрес почты</div>
 						</div>
 						<!-- +e.input-wrap-->
-						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" inputmode="text" name="text" type="text" placeholder="Вуз" required="required"/>
-						</div>
-						<!-- +e.input-wrap-->
-						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" inputmode="text" name="text" type="text" placeholder="Специальность" required="required"/>
-						</div>
-						<!-- +e.input-wrap-->
-						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" inputmode="number" name="number" type="number" placeholder="Год окончания" step="any" required="required"/>
-						</div>
-						<!-- +e.input-wrap-->
-						<div class="form-wrap__input-wrap form-group custom-select-wrap">
-							<select class="form-wrap__input form-select custom-select-js" name="select" data-placeholder="Направление стажировки">
-								<option value="Направление стажировки">Направление стажировки</option>
-								<option value="Направление стажировки1">Направление стажировки1</option>
-								<option value="Направление стажировки2">Направление стажировки2</option>
-								<option value="Направление стажировки3">Направление стажировки3</option>
-								<option value="Направление стажировки4">Направление стажировки4</option>
-							</select>
-						</div>
-						<!-- +e.input-wrap-->
-						<div class="form-wrap__radio-descr">Готов рассматривать альтернативное направление
-						</div>
-						<div class="radio-wrap">
-							<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="radio" type="radio" checked="checked"/><span class="custom-input__text form-check-label">Да</span>
+						<div class="radio-wrap is-invalid">
+							<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="radio" type="radio"/><span class="custom-input__text form-check-label">Гражданство РФ</span>
 							</label>
-							<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="radio" type="radio"/><span class="custom-input__text form-check-label">Нет</span>
+							<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="radio" type="radio"/><span class="custom-input__text form-check-label">Гражданство другого государства</span>
 							</label>
+							<div class="invalid-feedback">Укажи гражданство</div>
 						</div>
-						<div class="form-wrap__input-wrap form-group custom-select-wrap">
-							<select class="form-wrap__input form-select custom-select-js" name="select" data-placeholder="Направление второго приоритета">
-								<option value="Направление второго приоритета">Направление второго приоритета</option>
-								<option value="Направление второго приоритета1">Направление второго приоритета1</option>
-								<option value="Направление второго приоритета2">Направление второго приоритета2</option>
-								<option value="Направление второго приоритета3">Направление второго приоритета3</option>
-								<option value="Направление второго приоритета4">Направление второго приоритета4</option>
-							</select>
+						<div class="input-title d-sm-none">Вуз*</div>
+						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control is-invalid" inputmode="text" name="text" type="text" placeholder="Вуз*" required="required"/>
+							<div class="invalid-feedback">Укажи высшее учебное заведение</div>
 						</div>
 						<!-- +e.input-wrap-->
-						<label class="add-resume">Резюме
-							<input type="file" name="upload" onchange="loadFile(event)"/>
-							<svg class="icon icon-upload ">
-								<use xlink:href="img/svg/sprite.svg#upload"></use>
-							</svg>
-						</label>
-						<div class="form-wrap__capture">Подтвердите, что вы не робот, введите символы с картинки<span>*</span>
+						<div class="input-title d-sm-none">Специальность*</div>
+						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control is-invalid" inputmode="text" name="text" type="text" placeholder="Специальность*" required="required"/>
+							<div class="invalid-feedback">Укажи специальность</div>
 						</div>
-						<div class="form-wrap__capture-wrap">
-							<div class="form-wrap__capture-place"><img src="img/capture.png" alt="" loading="lazy"/>
-								<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" inputmode="text" name="text" type="text" placeholder="" required="required"/>
-								</div>
-								<!-- +e.input-wrap-->
-							</div><img src="img/capture-btn.png" alt="" loading="lazy"/>
+						<!-- +e.input-wrap-->
+						<div class="input-title d-sm-none">Год окончания*</div>
+						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control is-invalid" inputmode="number" name="number" type="number" placeholder="Год окончания*" step="any" required="required"/>
+							<div class="invalid-feedback">Укажи год выпуска</div>
 						</div>
-						<div class="form-wrap__policy">
-							<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="checkbox" type="checkbox" checked="checked"/><span class="custom-input__text text-secondary">Согласие на обработку <a href="#">персональных данных</a></span>
-							</label>
-							<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="checkbox" type="checkbox" checked="checked"/><span class="custom-input__text text-secondary">Согласен получать рассылку Молодежных карьерных проектов Правительства Москвы</span>
-							</label>
-						</div>
-						<button class="form-wrap__btn btn btn-primary" type="submit">Подать заявку
+						<!-- +e.input-wrap-->
+						<button class="form-wrap__btn btn btn-primary link-modal-js" type="submit" href="#modal-success">Подать заявку
 						</button>
+						<div class="form-wrap__text text-center text-secondary">Нажимая кнопку «Отправить заявку», я принимаю условия <a href="#">политики обработки персональных данных.</a>
+						</div>
 					</form>
 				</div>
 			</div>
 		</div>
 		<!-- #modal-call-->
+		<!-- #modal-success-->
+		<div id="modal-success" style="display: none">
+			<div class="modal-win modal-win--success">
+				<div class="text-center">
+					<div class="title form-data h3">Итак, первый шаг к карьере мечты сделан!</div>
+					<div class="title-sub">В течение 2 недель на твою электронную почту придет письмо, в котором мы расскажем о дальнейших действиях.</div>
+					<p>А пока — узнай больше о карьере в Правительстве Москвы!</p>
+				</div>
+				<div class="d-flex">
+						<a class="modal-win__item" href="https://t.me/moscow_career" target="_blank">
+							<div class="modal-win__qr-wrap">
+								<div class="modal-win__item-title">Телеграм
+								</div><img src="img/tg.png" alt="" loading="lazy"/>
+							</div>
+						</a>
+						<a class="modal-win__item" href="https://vk.com/moscow_career" target="_blank">
+							<div class="modal-win__qr-wrap">
+								<div class="modal-win__item-title">ВКонтакте
+								</div><img src="img/vk.png" alt="" loading="lazy"/>
+							</div>
+						</a>
+						<a class="modal-win__item" href="https://talent.mos.ru/" target="_blank">
+							<div class="modal-win__qr-wrap">
+								<div class="modal-win__item-title">Сайт
+								</div><img src="img/site.png" alt="" loading="lazy"/>
+							</div>
+						</a>
+				</div>
+			</div>
+		</div>
 		<!-- end modals-->
 		<script src="libs/swiper/swiper-bundle.min.js"> </script><script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
