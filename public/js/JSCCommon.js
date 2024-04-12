@@ -106,9 +106,10 @@ export default class JSCCommon {
 				let container = event.target.closest(".menu-mobile--js");
 				let toggle = event.target.closest(".toggle-menu-mobile--js");
         const link = event.target.closest('.menu-item')
+        const btn = event.target.closest('.top-nav__btn')
 				if (toggle) this.toggleMenu();
 				if (!container && !toggle) this.closeMenu();
-				if (link) this.closeMenu();
+				if (link || btn) this.closeMenu();
 			},
 			{passive: true}
 		);
@@ -191,10 +192,10 @@ export default class JSCCommon {
 		InputTel.forEach(element =>
 			element.setAttribute(
 				"pattern",
-				"[+][7]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}"
+				"[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}"
 			)
 		);
-		Inputmask({mask: "+7(999)999-99-99", showMaskOnHover: false}).mask(
+		Inputmask({mask: "+9(999)999-99-99", showMaskOnHover: false}).mask(
 			InputTel
 		);
 	}

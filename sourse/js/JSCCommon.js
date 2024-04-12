@@ -106,9 +106,10 @@ export default class JSCCommon {
 				let container = event.target.closest(".menu-mobile--js");
 				let toggle = event.target.closest(".toggle-menu-mobile--js");
         const link = event.target.closest('.menu-item')
+        const btn = event.target.closest('.top-nav__btn')
 				if (toggle) this.toggleMenu();
 				if (!container && !toggle) this.closeMenu();
-				if (link) this.closeMenu();
+				if (link || btn) this.closeMenu();
 			},
 			{passive: true}
 		);
