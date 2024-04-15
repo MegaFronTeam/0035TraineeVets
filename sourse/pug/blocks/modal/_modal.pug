@@ -9,8 +9,8 @@ mixin modal()
 						.text-center
 							.title.form-data.h3 Подать заявку на&nbsp;стажировку
 						.input-title.d-sm-none ФИО*
-						+input("ФИО*", 'text')(required)
-							//- .invalid-feedback Введи ФИО
+						+input("ФИО*", 'text')(required).is-invalid
+							.invalid-feedback Введи ФИО
 						//- (required readonly autocomplete="off"	class="date-input").data-picker--js
 						.input-title.d-sm-none Телефон*
 						+input("Телефон*",'tel')(required).is-invalid
@@ -38,19 +38,20 @@ mixin modal()
 	// #modal-call
 
 	// #modal-success
-	div(id="modal-success"	style="display: none" )
+	div(id="modal-success"	style="display: none" ).modal-win-wrap
 		+b.modal-win--success
-			.text-center
-				.title.form-data.h3 Итак, первый шаг к карьере мечты сделан!
-				.title-sub В течение 2 недель на твою электронную почту придет письмо, в котором мы расскажем о дальнейших действиях.
-				p А пока — узнай больше о карьере в Правительстве Москвы!
-			.d-flex
-				mixin item(i, t, link)
-					+e.item(href=`${link}` target="_blank")
-						+e.qr-wrap
-							+e.item-title= t
-							+img(`img/${i}.png`)
-				+item(`tg`,`Телеграм`,`https://t.me/moscow_career`)
-				+item(`vk`,`ВКонтакте`, `https://vk.com/moscow_career`)
-				+item(`site`,`Сайт`, `https://talent.mos.ru/`)
+			.custom-scroll()
+				.text-center
+					.title.form-data.h3 Итак, первый шаг к карьере мечты сделан!
+					.title-sub В течение 2 недель на твою электронную почту придет письмо, в котором мы расскажем о дальнейших действиях.
+					p А пока — узнай больше о карьере в Правительстве Москвы!
+				.d-flex
+					mixin item(i, t, link)
+						+e.item(href=`${link}` target="_blank")
+							+e.qr-wrap
+								+e.item-title= t
+								+img(`img/${i}.png`)
+					+item(`tg`,`Телеграм`,`https://t.me/moscow_career`)
+					+item(`vk`,`ВКонтакте`, `https://vk.com/moscow_career`)
+					+item(`site`,`Сайт`, `https://talent.mos.ru/`)
 	// end modals

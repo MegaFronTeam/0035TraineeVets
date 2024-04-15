@@ -80,7 +80,8 @@
 								<div class="title form-data h3">Подать заявку на&nbsp;стажировку</div>
 							</div>
 							<div class="input-title d-sm-none">ФИО*</div>
-							<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" inputmode="text" name="text" type="text" placeholder="ФИО*" required="required"/>
+							<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control is-invalid" inputmode="text" name="text" type="text" placeholder="ФИО*" required="required"/>
+								<div class="invalid-feedback">Введи ФИО</div>
 							</div>
 							<!-- +e.input-wrap-->
 							<div class="input-title d-sm-none">Телефон*</div>
@@ -127,32 +128,34 @@
 		</div>
 		<!-- #modal-call-->
 		<!-- #modal-success-->
-		<div id="modal-success" style="display: none">
+		<div class="modal-win-wrap" id="modal-success" style="display: none">
 			<div class="modal-win modal-win--success">
-				<div class="text-center">
-					<div class="title form-data h3">Итак, первый шаг к карьере мечты сделан!</div>
-					<div class="title-sub">В течение 2 недель на твою электронную почту придет письмо, в котором мы расскажем о дальнейших действиях.</div>
-					<p>А пока — узнай больше о карьере в Правительстве Москвы!</p>
-				</div>
-				<div class="d-flex">
-						<a class="modal-win__item" href="https://t.me/moscow_career" target="_blank">
-							<div class="modal-win__qr-wrap">
-								<div class="modal-win__item-title">Телеграм
-								</div><img src="img/tg.png" alt="" loading="lazy"/>
-							</div>
-						</a>
-						<a class="modal-win__item" href="https://vk.com/moscow_career" target="_blank">
-							<div class="modal-win__qr-wrap">
-								<div class="modal-win__item-title">ВКонтакте
-								</div><img src="img/vk.png" alt="" loading="lazy"/>
-							</div>
-						</a>
-						<a class="modal-win__item" href="https://talent.mos.ru/" target="_blank">
-							<div class="modal-win__qr-wrap">
-								<div class="modal-win__item-title">Сайт
-								</div><img src="img/site.png" alt="" loading="lazy"/>
-							</div>
-						</a>
+				<div class="custom-scroll">
+					<div class="text-center">
+						<div class="title form-data h3">Итак, первый шаг к карьере мечты сделан!</div>
+						<div class="title-sub">В течение 2 недель на твою электронную почту придет письмо, в котором мы расскажем о дальнейших действиях.</div>
+						<p>А пока — узнай больше о карьере в Правительстве Москвы!</p>
+					</div>
+					<div class="d-flex">
+								<a class="modal-win__item" href="https://t.me/moscow_career" target="_blank">
+									<div class="modal-win__qr-wrap">
+										<div class="modal-win__item-title">Телеграм
+										</div><img src="img/tg.png" alt="" loading="lazy"/>
+									</div>
+								</a>
+								<a class="modal-win__item" href="https://vk.com/moscow_career" target="_blank">
+									<div class="modal-win__qr-wrap">
+										<div class="modal-win__item-title">ВКонтакте
+										</div><img src="img/vk.png" alt="" loading="lazy"/>
+									</div>
+								</a>
+								<a class="modal-win__item" href="https://talent.mos.ru/" target="_blank">
+									<div class="modal-win__qr-wrap">
+										<div class="modal-win__item-title">Сайт
+										</div><img src="img/site.png" alt="" loading="lazy"/>
+									</div>
+								</a>
+					</div>
 				</div>
 			</div>
 		</div>
