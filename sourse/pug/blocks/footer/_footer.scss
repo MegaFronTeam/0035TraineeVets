@@ -83,7 +83,7 @@
 
   .link-more {
     display: inline-block;
-    margin-bottom: rem(36);
+    margin-bottom: rem(46);
     font-size: rem(15);
     @include media-breakpoint-up(md) {
       font-size: rem(18);
@@ -118,15 +118,10 @@
   .logos-wrapper {
     display: grid;
     align-items: end;
-    grid-template-columns: 150px 40%;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     column-gap: rem(54);
     row-gap: rem(20);
     margin-bottom: rem(40);
-    .icon-vet {
-      grid-row: 1/-1;
-      grid-column: 2;
-    }
     @include media-breakpoint-up(sm) {
       grid-template-rows: 40px;
       grid-template-columns: repeat(3, min-content);

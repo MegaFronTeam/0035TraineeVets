@@ -1,5 +1,5 @@
 /**
- * Swiper Custom Element 11.1.1
+ * Swiper Custom Element 11.1.0
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: April 9, 2024
+ * Released on: March 28, 2024
  */
 
 (function () {
@@ -2806,7 +2806,7 @@
         data.startMoving = true;
       }
     }
-    if (data.isScrolling || e.type === 'touchmove' && data.preventTouchMoveFromPointerMove) {
+    if (data.isScrolling) {
       data.isTouched = false;
       return;
     }
@@ -6528,17 +6528,6 @@
         gesture.slideEl = undefined;
       }
     }
-    let allowTouchMoveTimeout;
-    function allowTouchMove() {
-      swiper.touchEventsData.preventTouchMoveFromPointerMove = false;
-    }
-    function preventTouchMove() {
-      clearTimeout(allowTouchMoveTimeout);
-      swiper.touchEventsData.preventTouchMoveFromPointerMove = true;
-      allowTouchMoveTimeout = setTimeout(() => {
-        allowTouchMove();
-      });
-    }
     function onTouchStart(e) {
       const device = swiper.device;
       if (!gesture.imageEl) return;
@@ -6550,16 +6539,10 @@
       image.touchesStart.y = event.pageY;
     }
     function onTouchMove(e) {
-      if (!eventWithinSlide(e) || !eventWithinZoomContainer(e)) {
-        return;
-      }
+      if (!eventWithinSlide(e) || !eventWithinZoomContainer(e)) return;
       const zoom = swiper.zoom;
-      if (!gesture.imageEl) {
-        return;
-      }
-      if (!image.isTouched || !gesture.slideEl) {
-        return;
-      }
+      if (!gesture.imageEl) return;
+      if (!image.isTouched || !gesture.slideEl) return;
       if (!image.isMoved) {
         image.width = gesture.imageEl.offsetWidth || gesture.imageEl.clientWidth;
         image.height = gesture.imageEl.offsetHeight || gesture.imageEl.clientHeight;
@@ -6572,10 +6555,7 @@
       // Define if we need image drag
       const scaledWidth = image.width * zoom.scale;
       const scaledHeight = image.height * zoom.scale;
-      if (scaledWidth < gesture.slideWidth && scaledHeight < gesture.slideHeight) {
-        allowTouchMove();
-        return;
-      }
+      if (scaledWidth < gesture.slideWidth && scaledHeight < gesture.slideHeight) return;
       image.minX = Math.min(gesture.slideWidth / 2 - scaledWidth / 2, 0);
       image.maxX = -image.minX;
       image.minY = Math.min(gesture.slideHeight / 2 - scaledHeight / 2, 0);
@@ -6589,12 +6569,10 @@
       if (!image.isMoved && !isScaling) {
         if (swiper.isHorizontal() && (Math.floor(image.minX) === Math.floor(image.startX) && image.touchesCurrent.x < image.touchesStart.x || Math.floor(image.maxX) === Math.floor(image.startX) && image.touchesCurrent.x > image.touchesStart.x)) {
           image.isTouched = false;
-          allowTouchMove();
           return;
         }
         if (!swiper.isHorizontal() && (Math.floor(image.minY) === Math.floor(image.startY) && image.touchesCurrent.y < image.touchesStart.y || Math.floor(image.maxY) === Math.floor(image.startY) && image.touchesCurrent.y > image.touchesStart.y)) {
           image.isTouched = false;
-          allowTouchMove();
           return;
         }
       }
@@ -6602,7 +6580,6 @@
         e.preventDefault();
       }
       e.stopPropagation();
-      preventTouchMove();
       image.isMoved = true;
       const scaleRatio = (zoom.scale - currentScale) / (gesture.maxRatio - swiper.params.zoom.minRatio);
       const {
@@ -9608,7 +9585,7 @@
   }
 
   /**
-   * Swiper 11.1.1
+   * Swiper 11.1.0
    * Most modern mobile touch slider and framework with hardware accelerated transitions
    * https://swiperjs.com
    *
@@ -9616,7 +9593,7 @@
    *
    * Released under the MIT License
    *
-   * Released on: April 9, 2024
+   * Released on: March 28, 2024
    */
 
 
@@ -9943,7 +9920,7 @@
   }
 
   /**
-   * Swiper Custom Element 11.1.1
+   * Swiper Custom Element 11.1.0
    * Most modern mobile touch slider and framework with hardware accelerated transitions
    * https://swiperjs.com
    *
@@ -9951,7 +9928,7 @@
    *
    * Released under the MIT License
    *
-   * Released on: April 9, 2024
+   * Released on: March 28, 2024
    */
 
 

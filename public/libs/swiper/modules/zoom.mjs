@@ -211,17 +211,6 @@ function Zoom(_ref) {
       gesture.slideEl = undefined;
     }
   }
-  let allowTouchMoveTimeout;
-  function allowTouchMove() {
-    swiper.touchEventsData.preventTouchMoveFromPointerMove = false;
-  }
-  function preventTouchMove() {
-    clearTimeout(allowTouchMoveTimeout);
-    swiper.touchEventsData.preventTouchMoveFromPointerMove = true;
-    allowTouchMoveTimeout = setTimeout(() => {
-      allowTouchMove();
-    });
-  }
   function onTouchStart(e) {
     const device = swiper.device;
     if (!gesture.imageEl) return;
@@ -233,16 +222,10 @@ function Zoom(_ref) {
     image.touchesStart.y = event.pageY;
   }
   function onTouchMove(e) {
-    if (!eventWithinSlide(e) || !eventWithinZoomContainer(e)) {
-      return;
-    }
+    if (!eventWithinSlide(e) || !eventWithinZoomContainer(e)) return;
     const zoom = swiper.zoom;
-    if (!gesture.imageEl) {
-      return;
-    }
-    if (!image.isTouched || !gesture.slideEl) {
-      return;
-    }
+    if (!gesture.imageEl) return;
+    if (!image.isTouched || !gesture.slideEl) return;
     if (!image.isMoved) {
       image.width = gesture.imageEl.offsetWidth || gesture.imageEl.clientWidth;
       image.height = gesture.imageEl.offsetHeight || gesture.imageEl.clientHeight;
@@ -255,10 +238,7 @@ function Zoom(_ref) {
     // Define if we need image drag
     const scaledWidth = image.width * zoom.scale;
     const scaledHeight = image.height * zoom.scale;
-    if (scaledWidth < gesture.slideWidth && scaledHeight < gesture.slideHeight) {
-      allowTouchMove();
-      return;
-    }
+    if (scaledWidth < gesture.slideWidth && scaledHeight < gesture.slideHeight) return;
     image.minX = Math.min(gesture.slideWidth / 2 - scaledWidth / 2, 0);
     image.maxX = -image.minX;
     image.minY = Math.min(gesture.slideHeight / 2 - scaledHeight / 2, 0);
@@ -272,12 +252,10 @@ function Zoom(_ref) {
     if (!image.isMoved && !isScaling) {
       if (swiper.isHorizontal() && (Math.floor(image.minX) === Math.floor(image.startX) && image.touchesCurrent.x < image.touchesStart.x || Math.floor(image.maxX) === Math.floor(image.startX) && image.touchesCurrent.x > image.touchesStart.x)) {
         image.isTouched = false;
-        allowTouchMove();
         return;
       }
       if (!swiper.isHorizontal() && (Math.floor(image.minY) === Math.floor(image.startY) && image.touchesCurrent.y < image.touchesStart.y || Math.floor(image.maxY) === Math.floor(image.startY) && image.touchesCurrent.y > image.touchesStart.y)) {
         image.isTouched = false;
-        allowTouchMove();
         return;
       }
     }
@@ -285,7 +263,6 @@ function Zoom(_ref) {
       e.preventDefault();
     }
     e.stopPropagation();
-    preventTouchMove();
     image.isMoved = true;
     const scaleRatio = (zoom.scale - currentScale) / (gesture.maxRatio - swiper.params.zoom.minRatio);
     const {

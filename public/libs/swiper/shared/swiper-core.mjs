@@ -2361,7 +2361,7 @@ function onTouchMove(event) {
       data.startMoving = true;
     }
   }
-  if (data.isScrolling || e.type === 'touchmove' && data.preventTouchMoveFromPointerMove) {
+  if (data.isScrolling) {
     data.isTouched = false;
     return;
   }
