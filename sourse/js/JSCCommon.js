@@ -1,5 +1,8 @@
 "use strict";
 import "../libs/jquery/jquery.min.js";
+import "https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js";
+import "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js";
+import "../libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js";
 import "../libs/select2/js/select2.min.js";
 import "../libs/select2/js/i18n/ru.js";
 import "../libs/swiper/swiper-bundle.min.js";
@@ -105,8 +108,8 @@ export default class JSCCommon {
 			event => {
 				let container = event.target.closest(".menu-mobile--js");
 				let toggle = event.target.closest(".toggle-menu-mobile--js");
-        const link = event.target.closest('.menu-item')
-        const btn = event.target.closest('.top-nav__btn')
+				const link = event.target.closest(".menu-item");
+				const btn = event.target.closest(".top-nav__btn");
 				if (toggle) this.toggleMenu();
 				if (!container && !toggle) this.closeMenu();
 				if (link || btn) this.closeMenu();
@@ -419,18 +422,26 @@ export default class JSCCommon {
 		});
 	}
 
+	static setCustomScrollbar() {
+		$(".custom-scroll").mCustomScrollbar({
+			theme: "minimal-dark",
+			alwaysShowScrollbar: true,
+		});
+	}
+
 	static init() {
 		this.modalCall();
 		this.tabsCostume("tabs");
 		this.mobileMenu();
 		this.inputMask();
-    this.animateScroll();
+		this.animateScroll();
 		// this.sendForm();
 		this.heightWindow();
 		this.makeDDGroup();
 		this.disabledBtn();
 		this.customSelect();
 		this.setScreen();
+		this.setCustomScrollbar();
 		// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
 		// JSCCommon.animateScroll();
 
